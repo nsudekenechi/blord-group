@@ -234,7 +234,7 @@ include_once("./includes/header.php");
 							</div>
 						</div>
 						<div class="in-btn-1 wow fadeInUp" data-wow-delay="850ms" data-wow-duration="1000ms">
-							<a href="about.html">Read More</a>
+							<a href="about.php">Read More</a>
 						</div>
 					</div>
 				</div>

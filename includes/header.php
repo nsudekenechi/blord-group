@@ -6,7 +6,7 @@
 	<meta name="description" content="Insurin - Insurance Company HTML Template">
 	<meta name="keywords" content="	accounting, advising, advisory, business, company, consulting, corporate, finance, financial, investments, law, multi-purpose, services, tax help, visual composer">
 	<meta name="author" content="Kenechi Nsude">
-	<link rel="shortcut icon" href="assets/1674546785664-removebg-preview.png" type="image/x-icon">
+	<link rel="shortcut icon" href="assets/IMG_0832-removebg-preview.png" type="image/x-icon">
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -73,7 +73,9 @@
 			<div class="container">
 				<div class="in-header-main-menu-content d-flex align-items-center justify-content-between">
 					<div class="sticky-logo">
-						<a href="#" style="height:50px; display:block;"><img src="assets/1674546785664-removebg-preview.png" alt="" style="width:100%;height:100%;object-fit:cover"></a>
+						<a href="#" style="display:block;position:relative;">
+						<img src="assets/IMG_0832-removebg-preview.png" alt="" width="50">
+					</a>
 					</div>
 					<nav class="in-main-navigation-area clearfix ul-li">
 						<ul id="main-nav" class="nav navbar-nav clearfix">
@@ -81,7 +83,7 @@
 								<a href="./index.php">Home</a>
 								
 							</li>
-							<li><a target="_blank" href="about.html">About Us</a></li>
+							<li><a target="_blank" href="about.php">About Us</a></li>
 							<li class="dropdown">
 								<a href="!#">Shop</a>
 								<ul class="dropdown-menu clearfix">
@@ -145,11 +147,11 @@
 						</ul>
 					</nav>
 					<div class="in-header-search-cta-btn d-flex align-items-center">
-						<div class="in-header-search">
-							<button class="search-btn"><i class="fal fa-search"></i></button>
-						</div>
+						
 						<div class="in-header-cta-btn">
-							<a href="contact.html">Get A Quote</a>
+					
+							<a href="contact.html" style="background:#015fea;color:white">Login</a>
+							
 						</div>
 					</div>
 				</div>
@@ -264,7 +266,7 @@
 											</li>
 										</ul>
 									</li>
-									<li><a target="_blank" href="about.html">About Us</a></li>
+									<li><a target="_blank" href="about.php">About Us</a></li>
 									<li class="dropdown">
 										<a href="!#">Shop</a>
 										<ul class="dropdown-menu clearfix">

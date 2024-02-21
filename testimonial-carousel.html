@@ -167,7 +167,7 @@
 									</li>
 								</ul>
 							</li>
-							<li><a target="_blank" href="about.html">About Us</a></li>
+							<li><a target="_blank" href="about.php">About Us</a></li>
 							<li class="dropdown">
 								<a href="!#">Shop</a>
 								<ul class="dropdown-menu clearfix">
@@ -350,7 +350,7 @@
 											</li>
 										</ul>
 									</li>
-									<li><a target="_blank" href="about.html">About Us</a></li>
+									<li><a target="_blank" href="about.php">About Us</a></li>
 									<li class="dropdown">
 										<a href="!#">Shop</a>
 										<ul class="dropdown-menu clearfix">
