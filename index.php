@@ -1,4 +1,5 @@
 <?php
+$title="Home";
 include_once("./includes/header.php");
 ?>
 <style>
@@ -243,7 +244,44 @@ include_once("./includes/header.php");
 </section>
 <!-- End of About section
 	============================================= -->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+	<div class="tradingview-widget-container__widget"></div>
 
+	<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+		async>
+			{
+				"symbols": [
+					{
+						"proName": "FOREXCOM:SPXUSD",
+						"title": "S&P 500"
+					},
+					{
+						"proName": "FOREXCOM:NSXUSD",
+						"title": "US 100"
+					},
+					{
+						"proName": "FX_IDC:EURUSD",
+						"title": "EUR to USD"
+					},
+					{
+						"proName": "BITSTAMP:BTCUSD",
+						"title": "Bitcoin"
+					},
+					{
+						"proName": "BITSTAMP:ETHUSD",
+						"title": "Ethereum"
+					}
+				],
+					"showSymbolLogo": true,
+						"isTransparent": false,
+							"displayMode": "adaptive",
+								"colorTheme": "dark",
+									"locale": "en"
+			}
+		</script>
+</div>
+<!-- TradingView Widget END -->
 <!-- Start of CTA section
 	============================================= -->
 <section id="in-cta" class="in-cta-section">
@@ -670,26 +708,26 @@ include_once("./includes/header.php");
 <div class="container" style="height:500px;">
 	<div class="tradingview-widget-container">
 		<div class="tradingview-widget-container__widget"></div>
-		<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js"
-	async>
-		{
-			"width": "100%",
-				"height": "100%",
-					"currencies": [
-						"EUR",
-						"USD",
-						"JPY",
-						"GBP",
-						"CHF",
-						"AUD",
-						"CAD",
-						"NZD"
-					],
-						"isTransparent": false,
-							"colorTheme": "dark",
-								"locale": "en"
-		}
-	</script>
+		<script type="text/javascript"
+			src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+				{
+					"width": "100%",
+						"height": "100%",
+							"currencies": [
+								"EUR",
+								"USD",
+								"JPY",
+								"GBP",
+								"CHF",
+								"AUD",
+								"CAD",
+								"NZD"
+							],
+								"isTransparent": false,
+									"colorTheme": "dark",
+										"locale": "en"
+				}
+			</script>
 	</div>
 
 </div>
@@ -700,38 +738,43 @@ include_once("./includes/header.php");
 	<div class="container">
 		<div class="in-sponsor-slider">
 			<div class="in-sponsor-item">
-				<div class="inner-img">
-					<img src="assets/img/sponsor/sp1.png" alt="">
+				<div class="inner-img" style="">
+					<img src="assets/bitcoin-btc-logo.png" height="50" width="50" alt="">
 				</div>
 			</div>
 			<div class="in-sponsor-item">
-				<div class="inner-img">
-					<img src="assets/img/sponsor/sp2.png" alt="">
+				<div class="inner-img" style="">
+					<img src="assets/ethereum-eth-logo.png" height="50" width="50" alt="">
 				</div>
 			</div>
 			<div class="in-sponsor-item">
-				<div class="inner-img">
-					<img src="assets/img/sponsor/sp3.png" alt="">
+				<div class="inner-img" style="">
+					<img src="assets/solana-sol-logo.png" height="50" width="50" alt="">
 				</div>
 			</div>
 			<div class="in-sponsor-item">
-				<div class="inner-img">
-					<img src="assets/img/sponsor/sp4.png" alt="">
+				<div class="inner-img" style="">
+					<img src="assets/tether-usdt-logo.png" height="50" width="50" alt="">
 				</div>
 			</div>
 			<div class="in-sponsor-item">
-				<div class="inner-img">
-					<img src="assets/img/sponsor/sp5.png" alt="">
+				<div class="inner-img" style="">
+					<img src="assets/xrp-xrp-logo.png" height="50" width="50" alt="">
 				</div>
 			</div>
 			<div class="in-sponsor-item">
-				<div class="inner-img">
-					<img src="assets/img/sponsor/sp1.png" alt="">
+				<div class="inner-img" style="">
+					<img src="assets/dogecoin-doge-logo.png" height="50" width="50" alt="">
 				</div>
 			</div>
 			<div class="in-sponsor-item">
-				<div class="inner-img">
-					<img src="assets/img/sponsor/sp2.png" alt="">
+				<div class="inner-img" style="">
+					<img src="assets/cardano-ada-logo.png" height="50" width="50" alt="">
+				</div>
+			</div>
+			<div class="in-sponsor-item">
+				<div class="inner-img" style="">
+					<img src="assets/bnb-bnb-logo.png" height="50" width="50" alt="">
 				</div>
 			</div>
 		</div>
@@ -739,131 +782,6 @@ include_once("./includes/header.php");
 </section>
 <!-- End of Sponsor section
 	============================================= -->
-
-<!-- Start of Footer section
-	============================================= -->
-<footer id="in-footer" class="in-footer-section" data-background="assets/img/bg/footer-bg.jpg">
-	<div class="container">
-		<div class="in-footer-widget-wrapper">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="in-footer-widget">
-						<div class="logo-widget">
-							<div class="brand-logo">
-								<a href="#"><img src="assets/img/logo/logo-2.png" alt=""></a>
-							</div>
-							<div class="footer-text">
-								The charms of pleasure of the empect moment, so blinded by desire, thats they cannot
-								fores that ound to.
-							</div>
-							<div class="footer-social d-flex">
-								<a href="#"><i class="fab fa-facebook-f"></i></a>
-								<a href="#"><i class="fab fa-instagram"></i></a>
-								<a href="#"><i class="fab fa-twitter"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="in-footer-widget">
-						<div class="contact-widget headline">
-							<h3 class="widget-title">Contact info</h3>
-							<div class="contact-info">
-								<div class="info-item d-flex align-items-center">
-									<div class="inner-icon d-flex align-items-center justify-content-center">
-										<i class="fal fa-map-marker-alt"></i>
-									</div>
-									<div class="inner-text">
-										30 Commercial Road
-										Fratton, Australia
-									</div>
-								</div>
-								<div class="info-item d-flex align-items-center">
-									<div class="inner-icon d-flex align-items-center justify-content-center">
-										<i class="fal fa-envelope-open-text"></i>
-									</div>
-									<div class="inner-text">
-										insurin@company.com
-										1-888-452-1505
-									</div>
-								</div>
-								<div class="info-item d-flex align-items-center">
-									<div class="inner-icon d-flex align-items-center justify-content-center">
-										<i class="fal fa-phone-plus"></i>
-									</div>
-									<div class="inner-text">
-										Mon – Sat: 8 am – 5 pm,
-										Sunday: CLOSED
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="in-footer-widget">
-						<div class="menu-widget headline ul-li-block">
-							<h3 class="widget-title">Our Company</h3>
-							<ul>
-								<li><a href="#">Our Story</a></li>
-								<li><a href="#">News & Blog</a></li>
-								<li><a href="#">Careers</a></li>
-								<li><a href="#">Customer Support</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Website Accessibility</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="in-footer-widget">
-						<div class="newslatter-widget headline ul-li-block">
-							<h3 class="widget-title">Subscribe newsletter</h3>
-							<form action="#" method="get">
-								<input type="email" name="email" placeholder="Email">
-								<button type="submit">Subscribe Now</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="in-footer-copyright-area d-flex justify-content-end">
-			<div class="in-footer-copyright-text">
-				<div class="inner-text d-flex justify-content-end">
-					Copyright © 2022themexriver
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<!-- End of Footer section
-	============================================= -->
-
-<!-- For Js Library -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/appear.js"></script>
-<script src="assets/js/slick.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/knob.js"></script>
-<script src="assets/js/jquery.filterizr.js"></script>
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/rbtools.min.js"></script>
-<script src="assets/js/rs6.min.js"></script>
-<script src="assets/js/jarallax.js"></script>
-<script src="assets/js/jquery.counterup.min.js"></script>
-<script src="assets/js/waypoints.min.js"></script>
-<script src="assets/js/tilt.jquery.min.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<script src="assets/js/jquery.marquee.min.js"></script>
-<script src="assets/js/roundslider.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
-<script src="assets/js/script.js"></script>
-
-</body>
-
-</html>
+<?php
+	require_once("./includes/footer.php");
+?>

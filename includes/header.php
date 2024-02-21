@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Home 1 - Insurin </title>
+	<title>Blord Group - <?=$title;?> </title>
 	<meta name="description" content="Insurin - Insurance Company HTML Template">
 	<meta name="keywords" content="	accounting, advising, advisory, business, company, consulting, corporate, finance, financial, investments, law, multi-purpose, services, tax help, visual composer">
-	<meta name="author" content="Themexriver">
-	<link rel="shortcut icon" href="assets/img/logo/ficon.png" type="image/x-icon">
+	<meta name="author" content="Kenechi Nsude">
+	<link rel="shortcut icon" href="assets/1674546785664-removebg-preview.png" type="image/x-icon">
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -73,99 +73,13 @@
 			<div class="container">
 				<div class="in-header-main-menu-content d-flex align-items-center justify-content-between">
 					<div class="sticky-logo">
-						<a href="#"><img src="assets/img/logo/logo-2.png" alt=""></a>
+						<a href="#" style="height:50px; display:block;"><img src="assets/1674546785664-removebg-preview.png" alt="" style="width:100%;height:100%;object-fit:cover"></a>
 					</div>
 					<nav class="in-main-navigation-area clearfix ul-li">
 						<ul id="main-nav" class="nav navbar-nav clearfix">
 							<li class="dropdown in-megamenu">
-								<a href="!#">Home</a>
-								<ul class="dropdown-menu clearfix">
-									<li>
-										<div class="in-megamenu-content">
-											<div class="in-megamenu-item-wrap">
-												<div class="row justify-content-center">
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm1.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-1.html">View Now</a></a>
-																</div>
-															</div>
-															<h3>Home One</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm2.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-2.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Two</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm3.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-3.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Three</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm4.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-4.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Four</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm5.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-5.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Five</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm6.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-6.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Six</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm7.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-7.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Seven</h3>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
+								<a href="./index.php">Home</a>
+								
 							</li>
 							<li><a target="_blank" href="about.html">About Us</a></li>
 							<li class="dropdown">

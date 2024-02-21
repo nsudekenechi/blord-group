@@ -11732,7 +11732,7 @@ select:visited {
 .in-footer-widget .logo-widget {
   padding: 45px 30px 65px;
   border-radius: 5px;
-  background-color: #10212b;
+  background-color: #000;
 }
 
 .in-footer-widget .logo-widget .brand-logo {
