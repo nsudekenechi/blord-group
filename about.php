@@ -1,1046 +1,335 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>About - Insurin </title>
-	<meta name="description" content="Insurin - Insurance Company HTML Template">
-	<meta name="keywords" content="	accounting, advising, advisory, business, company, consulting, corporate, finance, financial, investments, law, multi-purpose, services, tax help, visual composer">
-	<meta name="author" content="Themexriver">
-	<link rel="shortcut icon" href="assets/img/logo/ficon.png" type="image/x-icon">
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+$title = "About Us";
+include_once("./includes/header.php");
+$members = [
+	[
+		"name" => "Linus Williams Ifejika",
+		"role" => "CEO",
+		"text" => "As CEO of Blord Group, Linus Williams ensures strategic growth, navigating markets with precision.  ",
+		"img" => "assets/pexels-vika-glitter-5537455.jpg"
+	],
 
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
-	<link rel="stylesheet" href="assets/css/flaticon.css">
-	<link rel="stylesheet" href="assets/css/animate.css">
-	<link rel="stylesheet" href="assets/css/video.min.css">
-	<link rel="stylesheet" href="assets/css/slick-theme.css">
-	<link rel="stylesheet" href="assets/css/slick.css">
-	<link rel="stylesheet" href="assets/css/nice-select.css">
-	<link rel="stylesheet" href="assets/css/rs6.css">
-	<link rel="stylesheet" href="assets/css/global.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-	<div id="preloader"></div>
-	<div class="up">
-		<a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
-	</div>
-	
-<!-- Start of header section
-	============================================= -->
-	<header id="in-header" class="in-header-section header-style-one">
-		<div class="in-header-top-content-area">
-			<div class="container">
-				<div class="header-top-content d-flex justify-content-between align-items-center">
-					<div class="brand-logo">
-						<a href="#"><img src="assets/img/logo/logo-1.png" alt=""></a>
-					</div>
-					<div class="header-top-cta d-flex align-items-center">
-						<div class="cta-info-item position-relative d-flex align-items-center">
-							<div class="inner-icon">
-								<i class="fal fa-map-marker-alt"></i>
-							</div>
-							<div class="inner-text headline">
-								<h4>Contact us</h4>
-								<span>25/2 Norda, Ukrain</span>
-							</div>
-						</div>
-						<div class="cta-info-item position-relative d-flex align-items-center">
-							<div class="inner-icon">
-								<i class="fal fa-envelope-open-text"></i>
-							</div>
-							<div class="inner-text headline">
-								<h4>Email us</h4>
-								<span>info@insurin.com</span>
-							</div>
-						</div>
-						<div class="cta-info-item position-relative d-flex align-items-center">
-							<div class="inner-icon">
-								<i class="fal fa-phone-plus"></i>
-							</div>
-							<div class="inner-text headline">
-								<h4>Free Call</h4>
-								<span>(+02) - 23456789</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="in-header-main-menu-wrapper">
-			<div class="container">
-				<div class="in-header-main-menu-content d-flex align-items-center justify-content-between">
-					<div class="sticky-logo">
-						<a href="#"><img src="assets/img/logo/logo-2.png" alt=""></a>
-					</div>
-					<nav class="in-main-navigation-area clearfix ul-li">
-						<ul id="main-nav" class="nav navbar-nav clearfix">
-							<li class="dropdown in-megamenu">
-								<a href="!#">Home</a>
-								<ul class="dropdown-menu clearfix">
-									<li>
-										<div class="in-megamenu-content">
-											<div class="in-megamenu-item-wrap">
-												<div class="row justify-content-center">
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm1.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-1.html">View Now</a></a>
-																</div>
-															</div>
-															<h3>Home One</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm2.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-2.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Two</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm3.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-3.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Three</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm4.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-4.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Four</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm5.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-5.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Five</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm6.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-6.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Six</h3>
-														</div>
-													</div>
-													<div class="col-md-3">
-														<div class="in-megamenu-item position-relative">
-															<div class="in-megamenu-item-btn position-relative">
-																<img src="assets/img/gallery/dm7.jpg" alt="">
-																<div class="in-menu-btn-grp text-center">
-																	<a target="_blank" href="index-7.html">View Now</a>
-																</div>
-															</div>
-															<h3>Home Seven</h3>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li><a target="_blank" href="about.php">About Us</a></li>
-							<li class="dropdown">
-								<a href="!#">Shop</a>
-								<ul class="dropdown-menu clearfix">
-									<li><a target="_blank" href="shop.html">Shop Page </a></li>
-									<li><a target="_blank" href="shop-single.html">Shop Details</a></li>
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a href="!#">Pages</a>
-								<ul class="dropdown-menu clearfix">
-									<li><a target="_blank" href="service.html">Services</a></li>
-									<li><a target="_blank" href="service-2.html">Service Page 2</a></li>
-									<li class="dropdown">
-										<a href="service-single.html">Services Details</a>
-										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="service-single.html">Life Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Health Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Car Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Home Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Credit Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Transport Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Energy Insurence</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a href="!#">Testimonial</a>
-										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="testimonial.html">Testimonial</a></li>
-											<li><a target="_blank" href="testimonial-carousel.html">Testimonial Carousel</a></li>
-											
-										</ul>
-									</li>
-									<li><a target="_blank" href="team.html">Team Page</a></li>
-									<li><a target="_blank" href="team-single.html">Team Details</a></li>
-									<li><a target="_blank" href="faq.html">FAQ Page</a></li>
-									<li><a target="_blank"  href="pricing.html">Pricing Page</a></li>
-									<li><a target="_blank" href="contact.html">Contact Page</a></li>
-									<li><a target="_blank" href="insurance-calculator.html">Insurence Calculator</a></li>
-									<li><a target="_blank" href="404.html">404</a></li>
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a class="" href="!#">Blog</a>
-								<ul class="dropdown-menu clearfix">
-									<li><a target="_blank" href="blog-list.html">News </a></li>
-									<li><a target="_blank" href="blog-grid.html">News Grid</a></li>
-									<li><a target="_blank" href="blog-list-2.html">News List</a></li>
-									<li><a target="_blank" href="blog-slider.html">News Slider</a></li>
-									<li><a target="_blank" href="blog-single.html">News Details</a></li>
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a class="" href="!#">Portfolio</a>
-								<ul class="dropdown-menu clearfix">
-									<li><a target="_blank" href="portfolio-slide.html">Portfolio Slide </a></li>
-									<li><a target="_blank" href="portfolio-grid.html">Portfolio Grid</a></li>
-									<li><a target="_blank" href="portfolio-masonry.html">Porfolio Masonry</a></li>
-									<li><a target="_blank" href="portfolio-single.html">Portfolio Details</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-					<div class="in-header-search-cta-btn d-flex align-items-center">
-						<div class="in-header-search">
-							<button class="search-btn"><i class="fal fa-search"></i></button>
-						</div>
-						<div class="in-header-cta-btn">
-							<a href="contact.html">Get A Quote</a>
-						</div>
-					</div>
-				</div>
-				<div class="mobile_menu position-relative">
-					<div class="mobile_menu_button open_mobile_menu">
-						<i class="fal fa-bars"></i>
-					</div>
-					<div class="mobile_menu_wrap">
-						<div class="mobile_menu_overlay open_mobile_menu"></div>
-						<div class="mobile_menu_content">
-							<div class="mobile_menu_close open_mobile_menu">
-								<i class="fal fa-times"></i>
-							</div>
-							<div class="m-brand-logo">
-								<a  href="!#"><img src="assets/img/logo/logo-1.png" alt=""></a>
-							</div>
-							<div class="in-m-search">
-								<form action="#">
-									<input type="text" name="search" placeholder="Search..">
-									<button type="submit"><i class="far fa-search"></i></button>
-								</form>
-							</div>
-							<nav class="mobile-main-navigation  clearfix ul-li">
-								<ul id="m-main-nav" class="nav navbar-nav clearfix">
-									<li class="dropdown in-megamenu">
-										<a href="!#">Home</a>
-										<ul class="dropdown-menu clearfix">
-											<li>
-												<div class="in-megamenu-content">
-													<div class="in-megamenu-item-wrap">
-														<div class="row justify-content-center">
-															<div class="col-md-3">
-																<div class="in-megamenu-item position-relative">
-																	<div class="in-megamenu-item-btn position-relative">
-																		<img src="assets/img/gallery/dm1.jpg" alt="">
-																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-1.html">View Now</a></a>
-																		</div>
-																	</div>
-																	<h3>Home One</h3>
-																</div>
-															</div>
-															<div class="col-md-3">
-																<div class="in-megamenu-item position-relative">
-																	<div class="in-megamenu-item-btn position-relative">
-																		<img src="assets/img/gallery/dm2.jpg" alt="">
-																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-2.html">View Now</a>
-																		</div>
-																	</div>
-																	<h3>Home Two</h3>
-																</div>
-															</div>
-															<div class="col-md-3">
-																<div class="in-megamenu-item position-relative">
-																	<div class="in-megamenu-item-btn position-relative">
-																		<img src="assets/img/gallery/dm3.jpg" alt="">
-																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-3.html">View Now</a>
-																		</div>
-																	</div>
-																	<h3>Home Three</h3>
-																</div>
-															</div>
-															<div class="col-md-3">
-																<div class="in-megamenu-item position-relative">
-																	<div class="in-megamenu-item-btn position-relative">
-																		<img src="assets/img/gallery/dm4.jpg" alt="">
-																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-4.html">View Now</a>
-																		</div>
-																	</div>
-																	<h3>Home Four</h3>
-																</div>
-															</div>
-															<div class="col-md-3">
-																<div class="in-megamenu-item position-relative">
-																	<div class="in-megamenu-item-btn position-relative">
-																		<img src="assets/img/gallery/dm5.jpg" alt="">
-																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-5.html">View Now</a>
-																		</div>
-																	</div>
-																	<h3>Home Five</h3>
-																</div>
-															</div>
-															<div class="col-md-3">
-																<div class="in-megamenu-item position-relative">
-																	<div class="in-megamenu-item-btn position-relative">
-																		<img src="assets/img/gallery/dm6.jpg" alt="">
-																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-6.html">View Now</a>
-																		</div>
-																	</div>
-																	<h3>Home Six</h3>
-																</div>
-															</div>
-															<div class="col-md-3">
-																<div class="in-megamenu-item position-relative">
-																	<div class="in-megamenu-item-btn position-relative">
-																		<img src="assets/img/gallery/dm7.jpg" alt="">
-																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-7.html">View Now</a>
-																		</div>
-																	</div>
-																	<h3>Home Seven</h3>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</li>
-									<li><a target="_blank" href="about.php">About Us</a></li>
-									<li class="dropdown">
-										<a href="!#">Shop</a>
-										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="shop.html">Shop Page </a></li>
-											<li><a target="_blank" href="shop-single.html">Shop Details</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a href="!#">Pages</a>
-										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="service.html">Services</a></li>
-											<li><a target="_blank" href="service-2.html">Service Page 2</a></li>
-											<li class="dropdown">
-												<a href="service-single.html">Services Details</a>
-												<ul class="dropdown-menu clearfix">
-													<li><a target="_blank" href="service-single.html">Life Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Health Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Car Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Home Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Credit Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Transport Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Energy Insurence</a></li>
-												</ul>
-											</li>
-											<li class="dropdown">
-												<a href="!#">Testimonial</a>
-												<ul class="dropdown-menu clearfix">
-													<li><a target="_blank" href="testimonial.html">Testimonial</a></li>
-													<li><a target="_blank" href="testimonial-carousel.html">Testimonial Carousel</a></li>
+	[
+		"name" => "Umeokafor Chidi Kosi",
+		"role" => "Legal Counsel",
+		"text" => "Leads the investment strategy, manages risk, and evaluates opportunities to maximize returns.",
+		"img" => "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
+	],
 
-												</ul>
-											</li>
-											<li><a target="_blank" href="team.html">Team Page</a></li>
-											<li><a target="_blank" href="team-single.html">Team Details</a></li>
-											<li><a target="_blank" href="faq.html">FAQ Page</a></li>
-											<li><a target="_blank"  href="pricing.html">Pricing Page</a></li>
-											<li><a target="_blank" href="contact.html">Contact Page</a></li>
-											<li><a target="_blank" href="insurance-calculator.html">Insurence Calculator</a></li>
-											<li><a target="_blank" href="404.html">404</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a class="" href="!#">Blog</a>
-										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="blog-list.html">News </a></li>
-											<li><a target="_blank" href="blog-grid.html">News Grid</a></li>
-											<li><a target="_blank" href="blog-list-2.html">News List</a></li>
-											<li><a target="_blank" href="blog-slider.html">News Slider</a></li>
-											<li><a target="_blank" href="blog-single.html">News Details</a></li>
-										</ul>
-									</li>
-									<li class="dropdown">
-										<a class="" href="!#">Portfolio</a>
-										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="portfolio-slide.html">Portfolio Slide </a></li>
-											<li><a target="_blank" href="portfolio-grid.html">Portfolio Grid</a></li>
-											<li><a target="_blank" href="portfolio-masonry.html">Porfolio Masonry</a></li>
-											<li><a target="_blank" href="portfolio-single.html">Portfolio Details</a></li>
-										</ul>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-					<!-- /Mobile-Menu -->
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- search filed -->
-	<div class="search-body">
-		<div class="search-form">
-			<form action="#" class="search-form-area">
-				<input class="search-input" type="search" placeholder="Search Here">
-				<button type="submit" class="search-btn1">
-					<i class="fas fa-search"></i>
-				</button>	
-			</form>
-			<div class="outer-close text-center search-btn">
-				<i class="fas fa-times"></i>
-			</div>
-		</div>
-	</div>
-<!-- End of header section
-	============================================= -->
+	[
+		"name" => "Ikeolisa Helen Obiagel",
+		"role" => "General Accountant",
+		"text" => "As CEO of Blord Group, Linus Williams ensures strategic growth, navigating markets with precision.  ",
+		"img" => "https://images.pexels.com/photos/4689910/pexels-photo-4689910.jpeg"
+	],
 
-<!-- Start of breadcrumb section
-	============================================= -->
-	<section id="in-breadcrumb" class="in-breadcrumb-section">
-		<div class="in-breadcrumb-content position-relative"  data-background="assets/img/bg/bread-bg.jpg">
-			<div class="background_overlay"></div>
-			<div class="container">
-				<div class="in-breadcrumb-title-content position-relative headline ul-li">
-					<span>Trusted Insurence</span>
-					<h2>About Us</h2>
-				</div>
-			</div>
-		</div>
-	</section>
-<!-- End of breadcrumb section
-	============================================= -->
+	[
+		"name" => "Anagor Adaeze",
+		"role" => "Finance Admin",
+		"text" => "As CEO of Blord Group, Linus Williams ensures strategic growth, navigating markets with precision.  ",
+		"img" => "assets/pexels-vika-glitter-5537455.jpg"
+	],
+	[
+		"name" => "Akpunonu Blessing",
+		"role" => "Marketing Manager",
+		"text" => "As CEO of Blord Group, Linus Williams ensures strategic growth, navigating markets with precision.  ",
+		"img" => "assets/pexels-vika-glitter-5537455.jpg"
+	]
+];
+
+$clients = [
+	[
+		"name" => "Adeola Adeyemi",
+		"text" => "Blord Group's insightful guidance transformed my investment strategy. With their support, I've achieved remarkable growth in my portfolio. ",
+	],
+	[
+		"name" => "Chika Nwachukwu",
+		"text" => "Choosing Blord Group was a game-changer for me. Their dedication to understanding my financial goals and crafting tailored solutions has been remarkable.",
+	],
+	[
+		"name" => "Emeka Okafor",
+		"text" => "Blord Group's proactive approach and attention to detail have impressed me. They've helped me navigate complex investment decisions with confidence. ",
+	],
+	[
+		"name" => "Ifeoma Onyeka",
+		"text" => "Blord Group's expertise shines through in every interaction. Their team is responsive, professional, and committed to delivering results. ",
+		"img" => ""
+	],
+	[
+		"name" => "Jabari Okeke",
+		"text" => "I'm incredibly grateful for Blord Group's support and expertise, their transparent communication and strategic insights. ",
+		"img" => ""
+	]
+];
+$sponsorsImages = ["united-capital-plc--600-removebg-preview.png", "logo-removebg-preview.png", "kisspng-standard-bank-finance-financial-services-funding-5b1432787767a9.9873562815280502964891-removebg-preview.png", "chapel_hill_denham_cover-removebg-preview.png", "arm_logo_2362x1233-removebg-preview.png", "OrW7FabG_400x400-removebg-preview (1).png", "download-removebg-preview.png"];
+?>
+
+
 
 <!-- Start of About section
-	============================================= -->		
-	<section id="in-about-1" class="in-about-section-1 about-page-about position-relative">
-		<div class="in-about-bg position-absolute">
-			<img src="assets/img/bg/ab-bg.jpg" alt="">
-		</div>
-		<div class="container">
-			<div class="in-about-content-1">
-				<div class="row">
-					<div class="col-lg-7">
-						<div class="in-about-feature-img-1 position-relative d-flex">
-							<div class="in-about-feature-wrapper">
-								<div class="in-about-feature-item wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
-									<div class="inner-icon">
-										<i class="flaticon-life-insurance"></i>
-									</div>
-									<div class="inner-text headline pera-content">
-										<h3>Pay Bills</h3>
-										<p>On the other hand we den noun with righteous
-										</p>
-									</div>
+	============================================= -->
+<section id="in-about-1" class="in-about-section-1 about-page-about position-relative">
+
+	<div class="container">
+		<div class="in-about-content-1">
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="in-about-feature-img-1 position-relative d-flex">
+						<div class="in-about-feature-wrapper">
+							<div class="in-about-feature-item wow fadeInUp" data-wow-delay="200ms"
+								data-wow-duration="1000ms">
+								<div class="inner-icon">
+									<i class="flaticon-life-insurance"></i>
 								</div>
-								<div class="in-about-feature-item wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
-									<div class="inner-icon">
-										<i class="flaticon-life-insurance-1"></i>
-									</div>
-									<div class="inner-text headline pera-content">
-										<h3>Wealth Protection</h3>
-										<p>On the other hand we den noun with righteous
-										</p>
-									</div>
-								</div>
-								<div class="in-about-feature-item wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-									<div class="inner-icon">
-										<i class="flaticon-business-and-finance"></i>
-									</div>
-									<div class="inner-text headline pera-content">
-										<h3>Protect Income</h3>
-										<p>On the other hand we den noun with righteous
-										</p>
-									</div>
+								<div class="inner-text headline pera-content">
+									<h3>Our vision</h3>
+									<p>Pioneering prosperity through strategic investments and innovation.
+									</p>
 								</div>
 							</div>
-							<div class="in-about-img-1 wow fadeInLeft" data-wow-delay="550ms" data-wow-duration="1000ms">
-								<img src="assets/img/about/ab1.jpg" alt="">
+							<div class="in-about-feature-item wow fadeInUp" data-wow-delay="300ms"
+								data-wow-duration="1000ms">
+								<div class="inner-icon">
+									<i class="flaticon-life-insurance-1"></i>
+								</div>
+								<div class="inner-text headline pera-content">
+									<h3>Our mission</h3>
+									<p>Empowering growth through strategic investments and sustainable practices.
+									</p>
+								</div>
+							</div>
+							<div class="in-about-feature-item wow fadeInUp" data-wow-delay="400ms"
+								data-wow-duration="1000ms">
+								<div class="inner-icon">
+									<i class="flaticon-business-and-finance"></i>
+								</div>
+								<div class="inner-text headline pera-content">
+									<h3>Core Values</h3>
+									<p>"Innovation, Integrity, Collaboration, Excellence, Sustainability.
+									</p>
+								</div>
 							</div>
 						</div>
+						<div class="in-about-img-1 wow fadeInLeft" data-wow-delay="550ms" data-wow-duration="1000ms"
+							style="height:600px;">
+							<img src="assets/pexels-mario-cuadros-2887582.jpg" alt=""
+								style="height:100%;width:100%;object-fit:cover;">
+						</div>
 					</div>
-					<div class="col-lg-5">
-						<div class="in-about-text-wrapper-1">
-							<div class="in-section-title-2 headline wow fadeInUp" data-wow-delay="550ms" data-wow-duration="1000ms">
-								<div class="sub-title position-relative text-uppercase">
-									About Us
-								</div>
-								<h2>Insurence Solution
-								With Experts </h2>
+				</div>
+				<div class="col-lg-5">
+					<div class="in-about-text-wrapper-1">
+						<div class="in-section-title-2 headline wow fadeInUp" data-wow-delay="550ms"
+							data-wow-duration="1000ms">
+							<div class="sub-title position-relative text-uppercase">
+								About Us
 							</div>
-							<div class="in-about-text-area-1 wow fadeInUp" data-wow-delay="650ms" data-wow-duration="1000ms">
-								On the other hand we denounce with righteous indig nation and dislike men who are sbeguiled and demor alized bite the finan charms blinded.
-							</div>
-							<div class="in-about-counter-wrapper-1 wow fadeInUp" data-wow-delay="750ms" data-wow-duration="1000ms">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="in-about-counter-item-1 headline pera-content">
-											<h3><span class="counter">12</span>K+</h3>
-											<p>Insurance Policies</p>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="in-about-counter-item-1 headline pera-content">
-											<h3><span class="counter">10</span>K+</h3>
-											<p>Happy Client</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1000ms">
-								<a href="#">Get Started Now</a>
-							</div>
+							<h2>Discover the Future with Blord Group</h2>
+						</div>
+						<div class="in-about-text-area-1 wow fadeInUp" data-wow-delay="650ms"
+							data-wow-duration="1000ms">
+							We're a pioneering investment firm committed to driving growth, innovation, and sustainable
+							wealth creation for our clients and partners worldwide.
+
+							At Blord Group, we redefine investment by merging cutting-edge strategies with unwavering
+							integrity. Our mission is to empower clients with innovative solutions, driving sustainable
+							growth and financial prosperity. With a global perspective and client-centric approach, we
+							navigate markets to deliver exceptional results, setting new standards in the investment
+							industry.
+						</div>
+
+
+
+						<div>
+
+						</div>
+
+						<div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms"
+							data-wow-duration="1000ms">
+							<a href="#">Get Started Now</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 <!-- End of About section
 	============================================= -->
 
-<!-- Start of CTA section
-	============================================= -->
-	<section id="in-cta-2" class="in-cta-section-2">
-		<div class="jarallax  position-relative"  data-background="assets/img/bg/cta2.jpg">
-			<div class="background_overlay"></div>
-			<div class="container">
-				<div class="in-cta-content-2 position-relative">
-					<div class="in-cta-text-btn-group wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-						<div class="in-section-title-2 headline">
-							<h2>Need Insurence Consultent
-							or Find an agent</h2>
-						</div>
-						<div class="in-cta-btn-grp d-flex">
-							<div class="in-btn-2 position-relative">
-								<a href="#">Get Started Now</a>
-							</div>
-							<div class="in-btn-2 position-relative">
-								<a href="#">Get Started Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="in-cta-info-2 position-absolute wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1000ms" data-background="assets/img/bg/cta-bg.png">
-				<div class="in-cta-info-item d-flex">
-					<div class="inner-icon">
-						<img src="assets/img/about/call.png" alt="">
-					</div>
-					<div class="inner-text headline">
-						<h3>Facing any problem to get a quote!</h3>
-						<span>Call: 1.888.255.4364</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>	
-<!-- End of CTA section
-	============================================= -->
-
-<!-- Start of Get a quote section
-	============================================= -->
-	<section id="in-get-quote" class="in-get-quote-section position-relative" data-background="assets/img/bg/get-qt.jpg">
-		<div class="container">
-			<div class="in-get-quote-content position-relative">
-				<span class="in-get-quote-img position-absolute wow fadeInRight" data-wow-delay="350ms" data-wow-duration="1000ms"><img src="assets/img/about/cnt.png" alt=""></span>
-				<div class="in-get-quote-form-content">
-					<div class="in-section-title-2 headline">
-						<div class="sub-title position-relative text-uppercase">
-							Get a Quote
-						</div>
-						<h2>Get an Insurance Quote
-						to Get Started! </h2>
-					</div>
-					<div class="in-get-quote-form-area">
-						<div class="in-get-quote-btn">
-							<ul class="nav nav-tabs" id="myTab" role="tablist">
-								<li class="nav-item" role="presentation">
-									<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="home" aria-selected="true">Personal</button>
-								</li>
-								<li class="nav-item" role="presentation">
-									<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#business" type="button" role="tab" aria-controls="profile" aria-selected="false">Business</button>
-								</li>
-							</ul>
-						</div>
-						<div class="in-contact-tab-area">
-							<div class="tab-content" id="myTabContent">
-								<div class="tab-pane animated fadeInUp show active" id="personal" role="tabpanel" aria-labelledby="home-tab">
-									<div class="in-contact-form-title-area">
-										<div class="form-title headline pera-content">
-											<h3>Personal Insurence</h3>
-											<p>Get zip code to compare Home insurance</p>
-										</div>
-										<div class="in-contact-form">
-											<form action="#" method="get">
-												<input type="text" name="name" placeholder="Name">
-												<input type="email" name="email" placeholder="Email">
-												<div class="in-insurance-type in-select position-relative">
-													<select>
-														<option value="#">Property Type</option>
-														<option value="#">Life Insurance</option>
-														<option value="#">Health Insurance</option>
-														<option value="#">Home Insurance</option>
-														<option value="#">Car Insurance</option>
-													</select>
-												</div>
-												<button type="submit">Get a Quote Now</button>
-											</form>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane animated fadeInUp" id="business" role="tabpanel" aria-labelledby="home-tab">
-									<div class="in-contact-form-title-area">
-										<div class="form-title headline pera-content">
-											<h3>Business Insurence</h3>
-											<p>Get zip code to compare Home insurance</p>
-										</div>
-										<div class="in-contact-form">
-											<form action="#" method="get">
-												<input type="text" name="name" placeholder="Name">
-												<input type="email" name="email" placeholder="Email">
-												<div class="in-insurance-type in-select position-relative">
-													<select>
-														<option value="#">Property Type</option>
-														<option value="#">Credit Insurance</option>
-														<option value="#">Transport Insurance</option>
-														<option value="#">Energy Insurance</option>
-														<option value="#">Employee Insurance</option>
-													</select>
-												</div>
-												<button type="submit">Get a Quote Now</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-<!-- End of Get a quote section
-	============================================= -->
 
 <!-- Start of Team slider section
 	============================================= -->
-	<section id="in-team-slider" class="in-team-slider-section" data-background="assets/img/bg/tm-bg.png">
-		<div class="container">
-			<div class="in-section-title-2 text-center pera-content headline wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1000ms">
-				<div class="sub-title position-relative text-uppercase">
-					Team Member
-				</div>
-				<h2>Meet Our Expert</h2>
-				<p>On the other hand we denounce with righteous indignation and dislike men who are so beguiled and demoralized.
-				</p>
+<section id="in-team-slider" class="in-team-slider-section"
+	data-background="assets/pexels-christina-morillo-1181360.jpg" style="position:relative;">
+	<div
+		style="left:0px; top:0px;width:100%;height:100%;;position:absolute;background:rgba(0,0,0,.7);backdrop-filter:blur(3px);">
+	</div>
+	<div class="container" style="position:relative;z-index:1;">
+		<div class="in-section-title-2 text-center pera-content headline wow fadeInUp" data-wow-delay="0ms"
+			data-wow-duration="1000ms">
+			<div class="sub-title position-relative text-uppercase">
+				Board Members
 			</div>
-			<div class="in-team-slider-two-column">
-				<div class="in-team-slider-2">
+			<h2 style="color:white;">Meet Our Experts</h2>
+			<p style="color:white;">On the other hand we denounce with righteous indignation and dislike men who are so
+				beguiled and demoralized.
+			</p>
+		</div>
+		<div class="in-team-slider-two-column">
+			<div class="in-team-slider-2">
+				<?php
+				foreach ($members as $member) {
+					?>
 					<div class="in-slider-item">
 						<div class="in-team-item position-relative">
 							<div class="in-team-img-text d-flex align-items-center">
 								<div class="in-team-img">
-									<img src="assets/img/team/tm1.png" alt="">
-								</div> 
+									<img src="<?= $member["img"]; ?>" alt=""
+										style="width:100%;height:100%;object-fit:cover;">
+								</div>
 								<div class="in-team-text headline">
-									<h3>John Doe</h3>
-									<span>Managing Diretor</span>
-									<div class="in-team-social d-flex">
-										<a href="#"><i class="fab fa-facebook-f"></i></a>
-										<a href="#"><i class="fab fa-twitter"></i></a>
-										<a href="#"><i class="fab fa-dribbble"></i></a>
-									</div>
+									<h3>
+										<?= $member["name"]; ?>
+									</h3>
+									<span>
+										<?= $member["role"]; ?>
+									</span>
+									<small style="display:block;margin-top:30px;">
+										<?= $member["text"]; ?>
+									</small>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="in-slider-item">
-						<div class="in-team-item position-relative">
-							<div class="in-team-img-text d-flex align-items-center">
-								<div class="in-team-img">
-									<img src="assets/img/team/tm2.png" alt="">
-								</div> 
-								<div class="in-team-text headline">
-									<h3>John Doe</h3>
-									<span>Managing Diretor</span>
-									<div class="in-team-social d-flex">
-										<a href="#"><i class="fab fa-facebook-f"></i></a>
-										<a href="#"><i class="fab fa-twitter"></i></a>
-										<a href="#"><i class="fab fa-dribbble"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="in-slider-item">
-						<div class="in-team-item position-relative">
-							<div class="in-team-img-text d-flex align-items-center">
-								<div class="in-team-img">
-									<img src="assets/img/team/tm3.png" alt="">
-								</div> 
-								<div class="in-team-text headline">
-									<h3>John Doe</h3>
-									<span>Managing Diretor</span>
-									<div class="in-team-social d-flex">
-										<a href="#"><i class="fab fa-facebook-f"></i></a>
-										<a href="#"><i class="fab fa-twitter"></i></a>
-										<a href="#"><i class="fab fa-dribbble"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="in-slider-item">
-						<div class="in-team-item position-relative">
-							<div class="in-team-img-text d-flex align-items-center">
-								<div class="in-team-img">
-									<img src="assets/img/team/tm2.png" alt="">
-								</div> 
-								<div class="in-team-text headline">
-									<h3>John Doe</h3>
-									<span>Managing Diretor</span>
-									<div class="in-team-social d-flex">
-										<a href="#"><i class="fab fa-facebook-f"></i></a>
-										<a href="#"><i class="fab fa-twitter"></i></a>
-										<a href="#"><i class="fab fa-dribbble"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="in-slider-item">
-						<div class="in-team-item position-relative">
-							<div class="in-team-img-text d-flex align-items-center">
-								<div class="in-team-img">
-									<img src="assets/img/team/tm3.png" alt="">
-								</div> 
-								<div class="in-team-text headline">
-									<h3>John Doe</h3>
-									<span>Managing Diretor</span>
-									<div class="in-team-social d-flex">
-										<a href="#"><i class="fab fa-facebook-f"></i></a>
-										<a href="#"><i class="fab fa-twitter"></i></a>
-										<a href="#"><i class="fab fa-dribbble"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+					<?php
+				}
+				?>
+
+
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 <!-- End of Team slider section
 	============================================= -->
 
 <!-- Start of testimonial section
 	============================================= -->
-	<section id="in-testimonial-3" class="in-testimonial-section-3">
-		<div class="container">
-			<div class="in-section-title-3  text-center headline pera-content">
-				<div class="sub-title position-relative text-uppercase">
-					<span> Testimonials </span>
-				</div>
-				<h2>Explore Clients Review</h2>
-				<p>On the other hand we denounce with righteous indignation and dislike men who are so beguiled and demoralized.
-				</p>
+<section id="in-testimonial-3" class="in-testimonial-section-3">
+	<div class="container">
+		<div class="in-section-title-3  text-center headline pera-content">
+			<div class="sub-title position-relative text-uppercase">
+				<span> Testimonials </span>
 			</div>
-			<div class="in-testimonial-content-3">
-				<div class="in-testimonial-slider-3">
+			<h2>Explore Clients Review</h2>
+			<p>Blord Group has exceeded my expectations in every aspect of investment management. Their expertise,
+				reliability, and personalized approach have greatly enhanced my financial portfolio. I highly recommend
+				their services to anyone seeking top-tier investment solutions.<b> - A satisfied Investor</b>
+			</p>
+		</div>
+		<div class="in-testimonial-content-3">
+			<div class="in-testimonial-slider-3">
+				<?php
+				foreach ($clients as $client) {
+					?>
 					<div class="in-slider-item">
 						<div class="in-testimonial-item-3">
 							<div class="quote-icon">
 								<i class="fas fa-quote-left"></i>
 							</div>
-							<div class="inner-text">
-								Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod mpor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse trices raviisus commodo viverra
+							<div class="inner-text" style="height:150px;">
+								<?= $client['text']; ?>
 							</div>
 							<div class="inner-author d-flex align-items-center">
-								<div class="inner-img">
-									<img src="assets/img/about/tst1.png" alt="">
-								</div>
 								<div class="author-meta headline">
-									<h3>Arnold Logan</h3>
-									<span>Managing Diretor</span>
+									<h3>
+										<?= $client['name']; ?>
+									</h3>
+									<span>Investor</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="in-slider-item">
-						<div class="in-testimonial-item-3">
-							<div class="quote-icon">
-								<i class="fas fa-quote-left"></i>
-							</div>
-							<div class="inner-text">
-								Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod mpor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse trices raviisus commodo viverra
-							</div>
-							<div class="inner-author d-flex align-items-center">
-								<div class="inner-img">
-									<img src="assets/img/about/tst1.png" alt="">
-								</div>
-								<div class="author-meta headline">
-									<h3>Arnold Logan</h3>
-									<span>Managing Diretor</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="in-slider-item">
-						<div class="in-testimonial-item-3">
-							<div class="quote-icon">
-								<i class="fas fa-quote-left"></i>
-							</div>
-							<div class="inner-text">
-								Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod mpor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse trices raviisus commodo viverra
-							</div>
-							<div class="inner-author d-flex align-items-center">
-								<div class="inner-img">
-									<img src="assets/img/about/tst1.png" alt="">
-								</div>
-								<div class="author-meta headline">
-									<h3>Arnold Logan</h3>
-									<span>Managing Diretor</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="in-slider-item">
-						<div class="in-testimonial-item-3">
-							<div class="quote-icon">
-								<i class="fas fa-quote-left"></i>
-							</div>
-							<div class="inner-text">
-								Lorem ipsum dolor sit amet, nsectetur adipiscing elit, sed do eiusmod mpor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse trices raviisus commodo viverra
-							</div>
-							<div class="inner-author d-flex align-items-center">
-								<div class="inner-img">
-									<img src="assets/img/about/tst1.png" alt="">
-								</div>
-								<div class="author-meta headline">
-									<h3>Arnold Logan</h3>
-									<span>Managing Diretor</span>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php
+				}
+				?>
 
-				</div>
+
+
 			</div>
 		</div>
-	</section>		
+	</div>
+</section>
 <!-- End of Testimonial section
-	============================================= -->				
+	============================================= -->
 
 <!-- Start of Sponsor section
 	============================================= -->
-	<section id="in-sponsor" class="in-sponsor-section-2">
-		<div class="container">
-			<div class="in-sponsor-slider">
-				<div class="in-sponsor-item">
-					<div class="inner-img">
-						<img src="assets/img/sponsor/spn1.png" alt="">
+<section id="in-about-1" class="in-about-section-1 about-page-about position-relative">
+
+	<div class="container">
+		<div class="in-about-content-1">
+
+			<div class="">
+				<div class="in-about-text-wrapper-1">
+					<div class="in-section-title-2 headline wow fadeInUp" data-wow-delay="550ms"
+						data-wow-duration="1000ms">
+						<div class="sub-title position-relative text-uppercase">
+							Our Partners
+						</div>
+						<h2>Meet Our Esteemed Partners</h2>
 					</div>
-				</div>
-				<div class="in-sponsor-item">
-					<div class="inner-img">
-						<img src="assets/img/sponsor/spn2.png" alt="">
+					<div class="in-about-text-area-1 wow fadeInUp" data-wow-delay="650ms" data-wow-duration="1000ms">
+						At Blord Group, we believe in the power of collaboration to achieve remarkable success. Our
+						journey towards excellence is marked by the invaluable partnerships we've forged along the way.
+						We take pride in aligning ourselves with industry leaders and visionaries who share our
+						commitment to innovation and growth.
+
+						Our esteemed partners represent a diverse spectrum of expertise, spanning across sectors such as
+						finance, technology, real estate, and beyond. Together, we navigate the ever-evolving landscape
+						of investment opportunities, blazing trails and pioneering new frontiers.
+
+						With each partnership, we cultivate synergies that drive mutual success and create lasting
+						impact. From strategic alliances to joint ventures, our collaborative efforts are propelled by
+						trust, integrity, and a shared vision for the future.
+
+						Join us as we continue to build bridges, break barriers, and redefine what's possible. Together,
+						we're not just partners – we're trailblazers, shaping the landscape of tomorrow's investments.
 					</div>
-				</div>
-				<div class="in-sponsor-item">
-					<div class="inner-img">
-						<img src="assets/img/sponsor/spn3.png" alt="">
-					</div>
-				</div>
-				<div class="in-sponsor-item">
-					<div class="inner-img">
-						<img src="assets/img/sponsor/spn4.png" alt="">
-					</div>
-				</div>
-				<div class="in-sponsor-item">
-					<div class="inner-img">
-						<img src="assets/img/sponsor/spn5.png" alt="">
-					</div>
-				</div>
-				<div class="in-sponsor-item">
-					<div class="inner-img">
-						<img src="assets/img/sponsor/spn1.png" alt="">
-					</div>
-				</div>
-				<div class="in-sponsor-item">
-					<div class="inner-img">
-						<img src="assets/img/sponsor/spn2.png" alt="">
+
+
+
+					<div>
+
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>	
+	</div>
+</section>
+<section id="in-sponsor" class="in-sponsor-section-2">
+	<div class="container">
+		<div class="in-sponsor-slider" style="display:flex;align-items:center;">
+			<?php
+			foreach ($sponsorsImages as $image) {
+				?>
+				<div class="in-sponsor-item">
+					<div class="inner-img" style="height:100px;width:100px;">
+						<img src="assets/<?= $image; ?>" alt="" style="width:100%;height:100%;object-fit:contain;">
+					</div>
+				</div>
+				<?php
+			}
+			?>
+
+
+		</div>
+	</div>
+</section>
 <!-- End of Sponsor section
 	============================================= -->
 
-<!-- Start of Footer section
-	============================================= -->
-	<footer id="in-footer" class="in-footer-section" data-background="assets/img/bg/footer-bg.jpg">
-		<div class="container">
-			<div class="in-footer-widget-wrapper">
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="in-footer-widget">
-							<div class="logo-widget">
-								<div class="brand-logo">
-									<a href="#"><img src="assets/img/logo/logo-2.png" alt=""></a>
-								</div>
-								<div class="footer-text">
-									The charms of pleasure of the empect moment, so blinded by desire, thats they cannot fores that ound to.
-								</div>
-								<div class="footer-social d-flex">
-									<a href="#"><i class="fab fa-facebook-f"></i></a>
-									<a href="#"><i class="fab fa-instagram"></i></a>
-									<a href="#"><i class="fab fa-twitter"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="in-footer-widget">
-							<div class="contact-widget headline">
-								<h3 class="widget-title">Contact info</h3>
-								<div class="contact-info">
-									<div class="info-item d-flex align-items-center">
-										<div class="inner-icon d-flex align-items-center justify-content-center">
-											<i class="fal fa-map-marker-alt"></i>
-										</div>
-										<div class="inner-text">
-											30 Commercial Road
-											Fratton, Australia 
-										</div>
-									</div>
-									<div class="info-item d-flex align-items-center">
-										<div class="inner-icon d-flex align-items-center justify-content-center">
-											<i class="fal fa-envelope-open-text"></i>
-										</div>
-										<div class="inner-text">
-											insurin@company.com
-											1-888-452-1505 
-										</div>
-									</div>
-									<div class="info-item d-flex align-items-center">
-										<div class="inner-icon d-flex align-items-center justify-content-center">
-											<i class="fal fa-phone-plus"></i>
-										</div>
-										<div class="inner-text">
-											Mon – Sat: 8 am – 5 pm,
-											Sunday: CLOSED
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="in-footer-widget">
-							<div class="menu-widget headline ul-li-block">
-								<h3 class="widget-title">Our Company</h3>
-								<ul>
-									<li><a href="#">Our Story</a></li>
-									<li><a href="#">News & Blog</a></li>
-									<li><a href="#">Careers</a></li>
-									<li><a href="#">Customer Support</a></li>
-									<li><a href="#">Contact Us</a></li>
-									<li><a href="#">Website Accessibility</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="in-footer-widget">
-							<div class="newslatter-widget headline ul-li-block">
-								<h3 class="widget-title">Subscribe newsletter</h3>
-								<form action="#" method="get">
-									<input type="email" name="email" placeholder="Email">
-									<button type="submit">Subscribe Now</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="in-footer-copyright-area d-flex justify-content-end">
-				<div class="in-footer-copyright-text">
-					<div class="inner-text d-flex justify-content-end">
-						Copyright © 2022themexriver
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>		
-<!-- End of Footer section
-	============================================= -->	
-
-	<!-- For Js Library -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery-ui.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/appear.js"></script>
-	<script src="assets/js/slick.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/knob.js"></script>
-	<script src="assets/js/jquery.filterizr.js"></script>
-	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-	<script src="assets/js/rbtools.min.js"></script>
-	<script src="assets/js/rs6.min.js"></script>
-	<script src="assets/js/jarallax.js"></script>
-	<script src="assets/js/jquery.counterup.min.js"></script>
-	<script src="assets/js/waypoints.min.js"></script>
-	<script src="assets/js/tilt.jquery.min.js"></script>
-	<script src="assets/js/isotope.pkgd.min.js"></script>
-	<script src="assets/js/jquery.marquee.min.js"></script>
-	<script src="assets/js/roundslider.js"></script>
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/jquery.nice-select.min.js"></script>
-	<script src="assets/js/script.js"></script>
-</body>
-</html>				
+<?php
+include_once("./includes/footer.php");
+?>
