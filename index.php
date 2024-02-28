@@ -66,7 +66,7 @@ include_once("./includes/header.php");
 						data-frame_999="o:0;st:w;" style="z-index:11;">
 
 						<div class="circle_img">
-							<img src="assets/pexels-ketut-subiyanto-4559959.jpg">
+							<img src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg">
 						</div>
 
 					</rs-layer><!--
@@ -444,11 +444,11 @@ include_once("./includes/header.php");
 							investors seeking stable returns. Discover lucrative deals and start building your real
 							estate portfolio today with Fundflex.
 						</div>
-						<div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms"
+						<!-- <div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms"
 							data-wow-duration="1000ms"
 							style="visibility: visible; animation-duration: 1000ms; animation-delay: 600ms; animation-name: fadeInUp;">
 							<a href="#">Get Started Now</a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="col-lg-7 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1000ms"
@@ -478,11 +478,11 @@ include_once("./includes/header.php");
 							investors seeking stable returns. Discover lucrative deals and start building your real
 							estate portfolio today with Fundflex.
 						</div>
-						<div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms"
+						<!-- <div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms"
 							data-wow-duration="1000ms"
 							style="visibility: visible; animation-duration: 1000ms; animation-delay: 600ms; animation-name: fadeInUp;">
 							<a href="#">Get Started Now</a>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="col-lg-7 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1000ms"
@@ -496,7 +496,7 @@ include_once("./includes/header.php");
 			<div class="in-pagination text-center ul-li">
 				<ul>
 
-					<li><a href="#" style="width:100%;display:flex; column-gap:10px;padding:10px;"><span>See
+					<li><a href="./service.php" style="width:100%;display:flex; column-gap:10px;padding:10px;"><span>See
 								More</span><i class="far fa-long-arrow-right"></i></a></li>
 				</ul>
 			</div>
@@ -511,7 +511,7 @@ include_once("./includes/header.php");
 <!-- Start of Testimonial section
 	============================================= -->
 <section id="in-testimonial" class="in-testimonial-section" style="position:relative;"
-	data-background="assets/pexels-woodysmedia-4394799.jpg">
+	data-background="https://images.pexels.com/photos/3184419/pexels-photo-3184419.jpeg">
 	<div class="background_overlay" style="position:absolute;background:rgba(0,0,0,.6);width:100%;height:100%;"></div>
 
 	<div class="container" style="position:relative;z-index:1;">
@@ -554,7 +554,7 @@ include_once("./includes/header.php");
 								<div class="inner-author d-flex align-items-center">
 
 									<div class="author-text headline">
-										<h3>Mrs Oge Ejimofor</h3>
+										<h3>Bred Huggins</h3>
 									</div>
 								</div>
 							</div>
@@ -585,7 +585,7 @@ include_once("./includes/header.php");
 								<div class="inner-author d-flex align-items-center">
 
 									<div class="author-text headline">
-										<h3>Engr Olamide Adebisi</h3>
+										<h3>Frank Leo</h3>
 									</div>
 								</div>
 							</div>

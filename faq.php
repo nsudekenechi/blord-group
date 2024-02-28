@@ -42,13 +42,14 @@ $faq = [
 										<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="200ms"
 											data-wow-duration="1500ms">
 											<h2 class="accordion-header" id="headingOne<?= $i; ?>">
-												<button class="accordion-button" type="button" data-bs-toggle="collapse"
+												<button class="accordion-button <?= $i != 0 ? 'collapsed' : ''; ?>" type="button" data-bs-toggle="collapse"
 													data-bs-target="#collapseOne<?= $i; ?>" aria-expanded="true"
 													aria-controls="collapseOne">
 													<?= $faq[$i]["title"]; ?>
 												</button>
 											</h2>
-											<div id="collapseOne<?= $i; ?>" class="accordion-collapse collapse show"
+											<div id="collapseOne<?= $i; ?>"
+												class="accordion-collapse collapse <?= $i == 0 ? 'show' : ''; ?>"
 												aria-labelledby="headingOne<?= $i; ?>" data-bs-parent="#accordionExample2">
 												<div class="accordion-body">
 													<?= $faq[$i]["subtitle"]; ?>
@@ -75,13 +76,13 @@ $faq = [
 										<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="200ms"
 											data-wow-duration="1500ms">
 											<h2 class="accordion-header" id="headingOne<?= $i; ?>">
-												<button class="accordion-button" type="button" data-bs-toggle="collapse"
+												<button class="accordion-button <?= $i != 3 ? 'collapsed' : ''; ?>" type="button" data-bs-toggle="collapse"
 													data-bs-target="#collapseOne<?= $i; ?>" aria-expanded="true"
 													aria-controls="collapseOne">
 													<?= $faq[$i]["title"]; ?>
 												</button>
 											</h2>
-											<div id="collapseOne<?= $i; ?>" class="accordion-collapse collapse show"
+											<div id="collapseOne<?= $i; ?>" class="accordion-collapse collapse <?= $i == 3 ? 'show' : ''; ?>"
 												aria-labelledby="headingOne<?= $i; ?>" data-bs-parent="#accordionExample2">
 												<div class="accordion-body">
 													<?= $faq[$i]["subtitle"]; ?>
