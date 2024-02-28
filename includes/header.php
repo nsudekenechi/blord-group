@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Blord Group - <?=$title;?> </title>
+	<title>Fundflex - <?=$title;?> </title>
 	<meta name="description" content="Insurin - Insurance Company HTML Template">
 	<meta name="keywords" content="	accounting, advising, advisory, business, company, consulting, corporate, finance, financial, investments, law, multi-purpose, services, tax help, visual composer">
 	<meta name="author" content="Kenechi Nsude">
@@ -83,67 +83,71 @@
 								<a href="./index.php">Home</a>
 								
 							</li>
-							<li><a target="_blank" href="about.php">About Us</a></li>
-							<li class="dropdown">
+							<li><a target="" href="about.php">About Us</a></li>
+
+							<li><a target="" href="pricing.php">Pricing</a></li>
+							<li><a target="" href="service.php">Services</a></li>
+							<li><a target="" href="faq.php">FAQ</a></li>
+							<!-- <li class="dropdown">
 								<a href="!#">Shop</a>
 								<ul class="dropdown-menu clearfix">
-									<li><a target="_blank" href="shop.html">Shop Page </a></li>
-									<li><a target="_blank" href="shop-single.html">Shop Details</a></li>
+									<li><a target="" href="shop.html">Shop Page </a></li>
+									<li><a target="" href="shop-single.html">Shop Details</a></li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a href="!#">Pages</a>
 								<ul class="dropdown-menu clearfix">
-									<li><a target="_blank" href="service.html">Services</a></li>
-									<li><a target="_blank" href="service-2.html">Service Page 2</a></li>
+									<li><a target="" href="service.php">Services</a></li>
+									<li><a target="" href="service-2.html">Service Page 2</a></li>
 									<li class="dropdown">
 										<a href="service-single.html">Services Details</a>
 										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="service-single.html">Life Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Health Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Car Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Home Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Credit Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Transport Insurence</a></li>
-											<li><a target="_blank" href="service-single.html">Energy Insurence</a></li>
+											<li><a target="" href="service-single.html">Life Insurence</a></li>
+											<li><a target="" href="service-single.html">Health Insurence</a></li>
+											<li><a target="" href="service-single.html">Car Insurence</a></li>
+											<li><a target="" href="service-single.html">Home Insurence</a></li>
+											<li><a target="" href="service-single.html">Credit Insurence</a></li>
+											<li><a target="" href="service-single.html">Transport Insurence</a></li>
+											<li><a target="" href="service-single.html">Energy Insurence</a></li>
 										</ul>
 									</li>
 									<li class="dropdown">
 										<a href="!#">Testimonial</a>
 										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="testimonial.html">Testimonial</a></li>
-											<li><a target="_blank" href="testimonial-carousel.html">Testimonial Carousel</a></li>
+											<li><a target="" href="testimonial.html">Testimonial</a></li>
+											<li><a target="" href="testimonial-carousel.html">Testimonial Carousel</a></li>
 											
 										</ul>
 									</li>
-									<li><a target="_blank" href="team.html">Team Page</a></li>
-									<li><a target="_blank" href="team-single.html">Team Details</a></li>
-									<li><a target="_blank" href="faq.html">FAQ Page</a></li>
-									<li><a target="_blank"  href="pricing.html">Pricing Page</a></li>
-									<li><a target="_blank" href="contact.html">Contact Page</a></li>
-									<li><a target="_blank" href="insurance-calculator.html">Insurence Calculator</a></li>
-									<li><a target="_blank" href="404.html">404</a></li>
+									<li><a target="" href="team.html">Team Page</a></li>
+									<li><a target="" href="team-single.html">Team Details</a></li>
+									<li><a target="" href="faq.php">FAQ Page</a></li>
+									<li><a target=""  href="pricing.php">Pricing Page</a></li>
+									<li><a target="" href="contact.html">Contact Page</a></li>
+									<li><a target="" href="insurance-calculator.html">Insurence Calculator</a></li>
+									<li><a target="" href="404.html">404</a></li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a class="" href="!#">Blog</a>
 								<ul class="dropdown-menu clearfix">
-									<li><a target="_blank" href="blog-list.html">News </a></li>
-									<li><a target="_blank" href="blog-grid.html">News Grid</a></li>
-									<li><a target="_blank" href="blog-list-2.html">News List</a></li>
-									<li><a target="_blank" href="blog-slider.html">News Slider</a></li>
-									<li><a target="_blank" href="blog-single.html">News Details</a></li>
+									<li><a target="" href="blog-list.html">News </a></li>
+									<li><a target="" href="blog-grid.html">News Grid</a></li>
+									<li><a target="" href="blog-list-2.html">News List</a></li>
+									<li><a target="" href="blog-slider.html">News Slider</a></li>
+									<li><a target="" href="blog-single.html">News Details</a></li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a class="" href="!#">Portfolio</a>
 								<ul class="dropdown-menu clearfix">
-									<li><a target="_blank" href="portfolio-slide.html">Portfolio Slide </a></li>
-									<li><a target="_blank" href="portfolio-grid.html">Portfolio Grid</a></li>
-									<li><a target="_blank" href="portfolio-masonry.html">Porfolio Masonry</a></li>
-									<li><a target="_blank" href="portfolio-single.html">Portfolio Details</a></li>
+									<li><a target="" href="portfolio-slide.html">Portfolio Slide </a></li>
+									<li><a target="" href="portfolio-grid.html">Portfolio Grid</a></li>
+									<li><a target="" href="portfolio-masonry.html">Porfolio Masonry</a></li>
+									<li><a target="" href="portfolio-single.html">Portfolio Details</a></li>
 								</ul>
-							</li>
+							</li> -->
 						</ul>
 					</nav>
 					<div class="in-header-search-cta-btn d-flex align-items-center">
@@ -188,7 +192,7 @@
 																	<div class="in-megamenu-item-btn position-relative">
 																		<img src="assets/img/gallery/dm1.jpg" alt="">
 																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-1.html">View Now</a></a>
+																			<a target="" href="index-1.html">View Now</a></a>
 																		</div>
 																	</div>
 																	<h3>Home One</h3>
@@ -199,7 +203,7 @@
 																	<div class="in-megamenu-item-btn position-relative">
 																		<img src="assets/img/gallery/dm2.jpg" alt="">
 																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-2.html">View Now</a>
+																			<a target="" href="index-2.html">View Now</a>
 																		</div>
 																	</div>
 																	<h3>Home Two</h3>
@@ -210,7 +214,7 @@
 																	<div class="in-megamenu-item-btn position-relative">
 																		<img src="assets/img/gallery/dm3.jpg" alt="">
 																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-3.html">View Now</a>
+																			<a target="" href="index-3.html">View Now</a>
 																		</div>
 																	</div>
 																	<h3>Home Three</h3>
@@ -221,7 +225,7 @@
 																	<div class="in-megamenu-item-btn position-relative">
 																		<img src="assets/img/gallery/dm4.jpg" alt="">
 																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-4.html">View Now</a>
+																			<a target="" href="index-4.html">View Now</a>
 																		</div>
 																	</div>
 																	<h3>Home Four</h3>
@@ -232,7 +236,7 @@
 																	<div class="in-megamenu-item-btn position-relative">
 																		<img src="assets/img/gallery/dm5.jpg" alt="">
 																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-5.html">View Now</a>
+																			<a target="" href="index-5.html">View Now</a>
 																		</div>
 																	</div>
 																	<h3>Home Five</h3>
@@ -243,7 +247,7 @@
 																	<div class="in-megamenu-item-btn position-relative">
 																		<img src="assets/img/gallery/dm6.jpg" alt="">
 																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-6.html">View Now</a>
+																			<a target="" href="index-6.html">View Now</a>
 																		</div>
 																	</div>
 																	<h3>Home Six</h3>
@@ -254,7 +258,7 @@
 																	<div class="in-megamenu-item-btn position-relative">
 																		<img src="assets/img/gallery/dm7.jpg" alt="">
 																		<div class="in-menu-btn-grp text-center">
-																			<a target="_blank" href="index-7.html">View Now</a>
+																			<a target="" href="index-7.html">View Now</a>
 																		</div>
 																	</div>
 																	<h3>Home Seven</h3>
@@ -266,65 +270,65 @@
 											</li>
 										</ul>
 									</li>
-									<li><a target="_blank" href="about.php">About Us</a></li>
+									<li><a target="" href="about.php">About Us</a></li>
 									<li class="dropdown">
 										<a href="!#">Shop</a>
 										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="shop.html">Shop Page </a></li>
-											<li><a target="_blank" href="shop-single.html">Shop Details</a></li>
+											<li><a target="" href="shop.html">Shop Page </a></li>
+											<li><a target="" href="shop-single.html">Shop Details</a></li>
 										</ul>
 									</li>
 									<li class="dropdown">
 										<a href="!#">Pages</a>
 										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="service.html">Services</a></li>
-											<li><a target="_blank" href="service-2.html">Service Page 2</a></li>
+											<li><a target="" href="service.php">Services</a></li>
+											<li><a target="" href="service-2.html">Service Page 2</a></li>
 											<li class="dropdown">
 												<a href="service-single.html">Services Details</a>
 												<ul class="dropdown-menu clearfix">
-													<li><a target="_blank" href="service-single.html">Life Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Health Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Car Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Home Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Credit Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Transport Insurence</a></li>
-													<li><a target="_blank" href="service-single.html">Energy Insurence</a></li>
+													<li><a target="" href="service-single.html">Life Insurence</a></li>
+													<li><a target="" href="service-single.html">Health Insurence</a></li>
+													<li><a target="" href="service-single.html">Car Insurence</a></li>
+													<li><a target="" href="service-single.html">Home Insurence</a></li>
+													<li><a target="" href="service-single.html">Credit Insurence</a></li>
+													<li><a target="" href="service-single.html">Transport Insurence</a></li>
+													<li><a target="" href="service-single.html">Energy Insurence</a></li>
 												</ul>
 											</li>
 											<li class="dropdown">
 												<a href="!#">Testimonial</a>
 												<ul class="dropdown-menu clearfix">
-													<li><a target="_blank" href="testimonial.html">Testimonial</a></li>
-													<li><a target="_blank" href="testimonial-carousel.html">Testimonial Carousel</a></li>
+													<li><a target="" href="testimonial.html">Testimonial</a></li>
+													<li><a target="" href="testimonial-carousel.html">Testimonial Carousel</a></li>
 
 												</ul>
 											</li>
-											<li><a target="_blank" href="team.html">Team Page</a></li>
-											<li><a target="_blank" href="team-single.html">Team Details</a></li>
-											<li><a target="_blank" href="faq.html">FAQ Page</a></li>
-											<li><a target="_blank"  href="pricing.html">Pricing Page</a></li>
-											<li><a target="_blank" href="contact.html">Contact Page</a></li>
-											<li><a target="_blank" href="insurance-calculator.html">Insurence Calculator</a></li>
-											<li><a target="_blank" href="404.html">404</a></li>
+											<li><a target="" href="team.html">Team Page</a></li>
+											<li><a target="" href="team-single.html">Team Details</a></li>
+											<li><a target="" href="faq.php">FAQ Page</a></li>
+											<li><a target=""  href="pricing.php">Pricing Page</a></li>
+											<li><a target="" href="contact.html">Contact Page</a></li>
+											<li><a target="" href="insurance-calculator.html">Insurence Calculator</a></li>
+											<li><a target="" href="404.html">404</a></li>
 										</ul>
 									</li>
 									<li class="dropdown">
 										<a class="" href="!#">Blog</a>
 										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="blog-list.html">News </a></li>
-											<li><a target="_blank" href="blog-grid.html">News Grid</a></li>
-											<li><a target="_blank" href="blog-list-2.html">News List</a></li>
-											<li><a target="_blank" href="blog-slider.html">News Slider</a></li>
-											<li><a target="_blank" href="blog-single.html">News Details</a></li>
+											<li><a target="" href="blog-list.html">News </a></li>
+											<li><a target="" href="blog-grid.html">News Grid</a></li>
+											<li><a target="" href="blog-list-2.html">News List</a></li>
+											<li><a target="" href="blog-slider.html">News Slider</a></li>
+											<li><a target="" href="blog-single.html">News Details</a></li>
 										</ul>
 									</li>
 									<li class="dropdown">
 										<a class="" href="!#">Portfolio</a>
 										<ul class="dropdown-menu clearfix">
-											<li><a target="_blank" href="portfolio-slide.html">Portfolio Slide </a></li>
-											<li><a target="_blank" href="portfolio-grid.html">Portfolio Grid</a></li>
-											<li><a target="_blank" href="portfolio-masonry.html">Porfolio Masonry</a></li>
-											<li><a target="_blank" href="portfolio-single.html">Portfolio Details</a></li>
+											<li><a target="" href="portfolio-slide.html">Portfolio Slide </a></li>
+											<li><a target="" href="portfolio-grid.html">Portfolio Grid</a></li>
+											<li><a target="" href="portfolio-masonry.html">Porfolio Masonry</a></li>
+											<li><a target="" href="portfolio-single.html">Portfolio Details</a></li>
 										</ul>
 									</li>
 								</ul>

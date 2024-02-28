@@ -214,7 +214,7 @@ include_once("./includes/header.php");
 							We are africa biggest crypto company, we specialise majorly in crypto exchange and real
 							estate. We are here to provide you with innovative financial solutions through experienced
 							expert guidance, diverse options, robust performance, personalized approach, and
-							transparency. Choose Blord Group for your investment journey.
+							transparency. Choose Fundflex for your investment journey.
 						</div>
 						<div class="in-about-counter-wrapper-1 wow fadeInUp" data-wow-delay="750ms"
 							data-wow-duration="1000ms">
@@ -418,7 +418,7 @@ include_once("./includes/header.php");
 					<h2>Accessible Investment Options</h2>
 				</div>
 				<div class="in-why-choose-top-text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
-					Discover the diverse array of investment plans offered by Blord Group. From comprehensive portfolios
+					Discover the diverse array of investment plans offered by Fundflex. From comprehensive portfolios
 					to
 					tailored strategies, we provide accessible options to suit every investor's needs and objectives.
 					Explore our range today and start building your financial future with confidence.
@@ -439,10 +439,10 @@ include_once("./includes/header.php");
 						</div>
 						<div class="in-about-text-area-1 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms"
 							style="visibility: visible; animation-duration: 1000ms; animation-delay: 400ms; animation-name: fadeInUp;">
-							Explore diverse real estate investment opportunities with Blord Group. From residential
+							Explore diverse real estate investment opportunities with Fundflex. From residential
 							properties to commercial ventures, our curated selection offers lucrative options for
 							investors seeking stable returns. Discover lucrative deals and start building your real
-							estate portfolio today with Blord Group.
+							estate portfolio today with Fundflex.
 						</div>
 						<div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms"
 							data-wow-duration="1000ms"
@@ -473,10 +473,10 @@ include_once("./includes/header.php");
 						</div>
 						<div class="in-about-text-area-1 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms"
 							style="visibility: visible; animation-duration: 1000ms; animation-delay: 400ms; animation-name: fadeInUp;">
-							Explore diverse real estate investment opportunities with Blord Group. From residential
+							Explore diverse real estate investment opportunities with Fundflex. From residential
 							properties to commercial ventures, our curated selection offers lucrative options for
 							investors seeking stable returns. Discover lucrative deals and start building your real
-							estate portfolio today with Blord Group.
+							estate portfolio today with Fundflex.
 						</div>
 						<div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms"
 							data-wow-duration="1000ms"
@@ -525,11 +525,11 @@ include_once("./includes/header.php");
 								Testimonial
 							</div> -->
 							<h2>What Client Says
-								About Blord Group </h2>
+								About Fundflex </h2>
 						</div>
 						<div class="in-testimonial-desc-text wow fadeInUp" data-wow-delay="350ms"
 							data-wow-duration="1000ms">
-							Blord Group has consistently exceeded my expectations with their insightful advice and
+							Fundflex has consistently exceeded my expectations with their insightful advice and
 							impeccable service. Their team is professional, knowledgeable, and trustworthy, making them
 							my go-to choice for investment solutions.
 						</div>
@@ -547,7 +547,7 @@ include_once("./includes/header.php");
 									<i class="fas fa-quote-left"></i>
 								</div>
 								<div class="inner-text">
-									Blord Group's personalized approach to investment management helped me achieve my
+									Fundflex's personalized approach to investment management helped me achieve my
 									financial goals efficiently. Their team's expertise and dedication are truly
 									commendable
 								</div>
@@ -563,7 +563,7 @@ include_once("./includes/header.php");
 									<i class="fas fa-quote-left"></i>
 								</div>
 								<div class="inner-text">
-									Blord Group's proactive investment strategies have yielded impressive returns for
+									Fundflex's proactive investment strategies have yielded impressive returns for
 									me. Their transparent communication and tailored solutions make them stand out in
 									the industry.
 								</div>
@@ -622,15 +622,16 @@ include_once("./includes/header.php");
 								<div class="pricing-title-price-area headline">
 									<h2>Starter Plan</h2>
 									<h3>10%</h3>
-									<span>Weekly</span>
+									<span>3 Days</span>
 								</div>
 								<div class="pricing-list-btn position-relative">
 									<div class="pricing-list ul-li-block">
 										<ul>
-											<li>Minimum Deposit - $50</li>
-											<li>Maximum Deposit - $100</li>
+											<li>Minimum Deposit - $30</li>
+											<li>Maximum Deposit - $1999</li>
 											<li>Daily Earnings Excluded</li>
 											<li>Instant Withdraw</li>
+											<li>Referral Commision - 20%</li>
 										</ul>
 									</div>
 									<div class="price-btn">
@@ -645,16 +646,17 @@ include_once("./includes/header.php");
 							<div class="in-price-inner-items text-center">
 								<div class="pricing-title-price-area headline">
 									<h2>Standard Plan</h2>
-									<h3>20%</h3>
-									<span>Daily</span>
+									<h3>25%</h3>
+									<span>15 Days</span>
 								</div>
 								<div class="pricing-list-btn position-relative">
 									<div class="pricing-list ul-li-block">
 										<ul>
-											<li>Minimum Deposit - $100</li>
-											<li>Maximum Deposit - $200</li>
+											<li>Minimum Deposit - $2000</li>
+											<li>Maximum Deposit - $4999</li>
 											<li>Daily Earnings</li>
 											<li>Instant Withdraw</li>
+											<li>Referral Commision - 20%</li>
 										</ul>
 									</div>
 									<div class="price-btn">
@@ -665,20 +667,22 @@ include_once("./includes/header.php");
 								</div>
 							</div>
 						</div>
+
 						<div class="col-lg-4 col-md-6">
 							<div class="in-price-inner-items text-center">
 								<div class="pricing-title-price-area headline">
 									<h2>Premium Plan</h2>
-									<h3>30%</h3>
-									<span>Hourly</span>
+									<h3>45%</h3>
+									<span>30 Days</span>
 								</div>
 								<div class="pricing-list-btn position-relative">
 									<div class="pricing-list ul-li-block">
 										<ul>
-											<li>Minimum Deposit - $300</li>
-											<li>Maximum Deposit - $400</li>
+											<li>Minimum Deposit - $5000</li>
+											<li>Maximum Deposit - $9999</li>
 											<li>Daily Earnings</li>
 											<li>Instant Withdraw</li>
+											<li>Referral Commision - 20%</li>
 										</ul>
 									</div>
 									<div class="price-btn">
@@ -694,7 +698,7 @@ include_once("./includes/header.php");
 				<div class="in-pagination text-center ul-li">
 					<ul>
 
-						<li><a href="#" style="width:100%;display:flex; column-gap:10px;padding:10px;"><span>See
+						<li><a href="./pricing.php" style="width:100%;display:flex; column-gap:10px;padding:10px;"><span>See
 									More</span><i class="far fa-long-arrow-right"></i></a></li>
 					</ul>
 				</div>

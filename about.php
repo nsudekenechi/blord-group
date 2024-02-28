@@ -3,61 +3,61 @@ $title = "About Us";
 include_once("./includes/header.php");
 $members = [
 	[
-		"name" => "Linus Williams Ifejika",
-		"role" => "CEO",
-		"text" => "As CEO of Blord Group, Linus Williams ensures strategic growth, navigating markets with precision.  ",
-		"img" => "assets/pexels-vika-glitter-5537455.jpg"
+		"name" => "John Smith",
+		"role" => "Chairman",
+		"text" => "John Smith brings unparalleled leadership to our board. His strategic insights and keen understanding of market trends have been instrumental in shaping our long-term vision. ",
+		"img" => "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg"
 	],
 
 	[
-		"name" => "Umeokafor Chidi Kosi",
-		"role" => "Legal Counsel",
-		"text" => "Leads the investment strategy, manages risk, and evaluates opportunities to maximize returns.",
+		"name" => "Jessica Ramirez",
+		"role" => "CEO",
+		"text" => "As the CEO , Emily spearheads our operations with a blend of innovation and strategic acumen. With a background in technology and finance, Emily ensures that our platform remains at the forefront of the digital investment landscape.",
 		"img" => "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
 	],
 
 	[
-		"name" => "Ikeolisa Helen Obiagel",
+		"name" => "Emily Chen",
 		"role" => "General Accountant",
-		"text" => "As CEO of Blord Group, Linus Williams ensures strategic growth, navigating markets with precision.  ",
-		"img" => "https://images.pexels.com/photos/4689910/pexels-photo-4689910.jpeg"
+		"text" => "Emily's extensive background in finance and accounting lends invaluable expertise to our board. With a focus on fiscal responsibility and risk management, she plays a pivotal role in driving our financial strategies forward. ",
+		"img" => "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg"
 	],
 
 	[
-		"name" => "Anagor Adaeze",
-		"role" => "Finance Admin",
-		"text" => "As CEO of Blord Group, Linus Williams ensures strategic growth, navigating markets with precision.  ",
-		"img" => "assets/pexels-vika-glitter-5537455.jpg"
+		"name" => "David Patel",
+		"role" => "Chief Technology Officer",
+		"text" => "He leads our technological initiatives with a forward-thinking approach and a passion for innovation. With expertise in software development and cybersecurity, David ensures that our platform remains secure, efficient, and user-friendly.  ",
+		"img" => "https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg"
 	],
 	[
-		"name" => "Akpunonu Blessing",
+		"name" => "Karen Johnson",
 		"role" => "Marketing Manager",
-		"text" => "As CEO of Blord Group, Linus Williams ensures strategic growth, navigating markets with precision.  ",
-		"img" => "assets/pexels-vika-glitter-5537455.jpg"
+		"text" => "Karen Johnson drives our marketing strategies with creativity and precision. With a background in digital marketing and brand management, Karen ensures that our message resonates with our target audience, driving growth and engagement. ",
+		"img" => "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg"
 	]
 ];
 
 $clients = [
 	[
-		"name" => "Adeola Adeyemi",
-		"text" => "Blord Group's insightful guidance transformed my investment strategy. With their support, I've achieved remarkable growth in my portfolio. ",
+		"name" => "Olivia Nguyen",
+		"text" => "Fundflex's insightful guidance transformed my investment strategy. With their support, I've achieved remarkable growth in my portfolio. ",
 	],
 	[
-		"name" => "Chika Nwachukwu",
-		"text" => "Choosing Blord Group was a game-changer for me. Their dedication to understanding my financial goals and crafting tailored solutions has been remarkable.",
+		"name" => "Isabella Martinez",
+		"text" => "Choosing Fundflex was a game-changer for me. Their dedication to understanding my financial goals and crafting tailored solutions has been remarkable.",
 	],
 	[
-		"name" => "Emeka Okafor",
-		"text" => "Blord Group's proactive approach and attention to detail have impressed me. They've helped me navigate complex investment decisions with confidence. ",
+		"name" => "Benjamin Williams",
+		"text" => "Fundflex's proactive approach and attention to detail have impressed me. They've helped me navigate complex investment decisions with confidence. ",
 	],
 	[
-		"name" => "Ifeoma Onyeka",
-		"text" => "Blord Group's expertise shines through in every interaction. Their team is responsive, professional, and committed to delivering results. ",
+		"name" => "Mason Phillip",
+		"text" => "Fundflex's expertise shines through in every interaction. Their team is responsive, professional, and committed to delivering results. ",
 		"img" => ""
 	],
 	[
-		"name" => "Jabari Okeke",
-		"text" => "I'm incredibly grateful for Blord Group's support and expertise, their transparent communication and strategic insights. ",
+		"name" => "Ben Lian",
+		"text" => "I'm incredibly grateful for Fundflex's support and expertise, their transparent communication and strategic insights. ",
 		"img" => ""
 	]
 ];
@@ -124,14 +124,14 @@ $sponsorsImages = ["united-capital-plc--600-removebg-preview.png", "logo-removeb
 							<div class="sub-title position-relative text-uppercase">
 								About Us
 							</div>
-							<h2>Discover the Future with Blord Group</h2>
+							<h2>Discover the Future with Fundflex</h2>
 						</div>
 						<div class="in-about-text-area-1 wow fadeInUp" data-wow-delay="650ms"
 							data-wow-duration="1000ms">
 							We're a pioneering investment firm committed to driving growth, innovation, and sustainable
 							wealth creation for our clients and partners worldwide.
 
-							At Blord Group, we redefine investment by merging cutting-edge strategies with unwavering
+							At Fundflex, we redefine investment by merging cutting-edge strategies with unwavering
 							integrity. Our mission is to empower clients with innovative solutions, driving sustainable
 							growth and financial prosperity. With a global perspective and client-centric approach, we
 							navigate markets to deliver exceptional results, setting new standards in the investment
@@ -184,7 +184,7 @@ $sponsorsImages = ["united-capital-plc--600-removebg-preview.png", "logo-removeb
 					<div class="in-slider-item">
 						<div class="in-team-item position-relative">
 							<div class="in-team-img-text d-flex align-items-center">
-								<div class="in-team-img">
+								<div class="in-team-img" style="width:500px;">
 									<img src="<?= $member["img"]; ?>" alt=""
 										style="width:100%;height:100%;object-fit:cover;">
 								</div>
@@ -223,7 +223,7 @@ $sponsorsImages = ["united-capital-plc--600-removebg-preview.png", "logo-removeb
 				<span> Testimonials </span>
 			</div>
 			<h2>Explore Clients Review</h2>
-			<p>Blord Group has exceeded my expectations in every aspect of investment management. Their expertise,
+			<p>Fundflex has exceeded my expectations in every aspect of investment management. Their expertise,
 				reliability, and personalized approach have greatly enhanced my financial portfolio. I highly recommend
 				their services to anyone seeking top-tier investment solutions.<b> - A satisfied Investor</b>
 			</p>
@@ -281,7 +281,7 @@ $sponsorsImages = ["united-capital-plc--600-removebg-preview.png", "logo-removeb
 						<h2>Meet Our Esteemed Partners</h2>
 					</div>
 					<div class="in-about-text-area-1 wow fadeInUp" data-wow-delay="650ms" data-wow-duration="1000ms">
-						At Blord Group, we believe in the power of collaboration to achieve remarkable success. Our
+						At Fundflex, we believe in the power of collaboration to achieve remarkable success. Our
 						journey towards excellence is marked by the invaluable partnerships we've forged along the way.
 						We take pride in aligning ourselves with industry leaders and visionaries who share our
 						commitment to innovation and growth.

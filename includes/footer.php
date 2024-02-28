@@ -17,14 +17,14 @@
 										style="width:100%; height:100%;object-fit:cover;"></a>
 							</div>
 							<div class="footer-text">
-								Investing in Blord Group offers more than just financial gains; it's a journey towards
+								Investing in Fundflex offers more than just financial gains; it's a journey towards
 								prosperity and security.
 							</div>
 							<div class="footer-social d-flex">
 								<a href="https://www.facebook.com/profile.php?id=100094885226033&mibextid=JRoKGi"><i
 										class="fab fa-facebook-f"></i></a>
-								<a href="#"><i class="fab fa-tiktok"></i></a>
-								<!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+								<a href="https://www.tiktok.com/@_blord_official?_t=8k3ieJEVcG6&_r=1"><i class="fab fa-tiktok"></i></a>
+								<a href="https://wa.me/2349164890324"><i class="fab fa-whatsapp"></i></a>
 							</div>
 						</div>
 					</div>
@@ -105,7 +105,7 @@
 		<div class="in-footer-copyright-area d-flex justify-content-end">
 			<div class="in-footer-copyright-text">
 				<div class="inner-text d-flex justify-content-end">
-					Copyright © <?=date("Y");?> Blord Group
+					Copyright © <?=date("Y");?> Fundflex
 				</div>
 			</div>
 		</div>
