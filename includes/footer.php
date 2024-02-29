@@ -1,7 +1,14 @@
 <!-- Start of Footer section
 	============================================= -->
 <?php
-if ($title != "Login"  && $title != "Sign up") {
+$pages = ["login", "sign up", "forgot password"];
+$showHeader = true;
+foreach ($pages as $page) {
+	if ($page == strtolower($title)) {
+		$showHeader = false;
+	}
+}
+if ($showHeader) {
 	?>
 	<footer id="in-footer" class="in-footer-section" data-background="./assets/pexels-anna-nekrashevich-6801872.jpg"
 		style="position:relative;">

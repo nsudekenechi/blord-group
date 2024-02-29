@@ -34,7 +34,7 @@ include_once("./includes/header.php");
                                     </div>
 
                                     <div class="col-md-6 d-md-flex justify-content-end mt-3">
-                                       <a href="">Forgot Password</a>
+                                       <a href="./forgotpassword.php">Forgot Password</a>
                                     </div>
 
                                     <div class="col-md-12 d-flex justify-content-center my-5">

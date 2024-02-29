@@ -33,7 +33,14 @@
 		<a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
 	</div>
 	<?php
-	if ($title != "Login" && $title != "Sign up") {
+	$pages = ["login", "sign up", "forgot password"];
+	$showHeader = true;
+	foreach ($pages as $page) {
+		if ($page == strtolower($title)) {
+			$showHeader = false;
+		}
+	}
+	if ($showHeader) {
 		?>
 		<!-- Start of header section
 	============================================= -->
