@@ -21,16 +21,17 @@ if ($showHeader) {
 					<div class="col-lg-3 col-md-6">
 						<div class="in-footer-widget">
 							<div class="logo-widget">
-								<!-- <div class="brand-logo">
-									<a href="" style="display:block;height:70px;padding:0px;margin:0px;"><img
-											src="assets/1674546785664-removebg-preview.png" alt=""
-											style="width:100%; height:100%;object-fit:cover;"></a>
-								</div> -->
+								<div class="brand-logo">
+									<a href="" style="padding:0px;margin:0px;">
+										<h3 style="color:#555;">Fundfl<span class='in-text-gradiant'>ex</span></h3>
+
+									</a>
+								</div>
 								<div class="footer-text">
 									Investing in Fundflex offers more than just financial gains; it's a journey towards
 									prosperity and security.
 								</div>
-							
+
 							</div>
 						</div>
 					</div>
@@ -40,13 +41,12 @@ if ($showHeader) {
 								<h3 class="widget-title">Contact info</h3>
 								<div class="contact-info">
 									<div class="info-item d-flex align-items-center">
-										<a href="https://maps.app.goo.gl/cquUwF6i49bueSvZ7"
-											style="display:flex;align-items:center;">
+										<a style="display:flex;align-items:center;">
 											<div class="inner-icon d-flex align-items-center justify-content-center">
 												<i class="fal fa-map-marker-alt"></i>
 											</div>
 											<div class="inner-text">
-												Wuse II, Federal Capital Territory
+												456 Elm Street, Springfield, IL 67890, USA
 											</div>
 										</a>
 									</div>
@@ -117,13 +117,72 @@ if ($showHeader) {
 				</div>
 			</div>
 		</div>
+
 	</footer>
+	<div id="payment-alert" class="in-pagination text-center ul-li">
+		
+	</div>
+
 	<?php
 }
 ?>
 <!-- End of Footer section
 	============================================= -->
+<style>
+	#payment-alert {
+		position: fixed;
+		width: fit-content;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		top: 70%;
+		left: 70%;
+		z-index: 10;
+		border: 1px solid var(--main-color);
+		color: black;
+		background-color: white;
+		height: 70px;
+		font-size: 13px;
+		border-radius: 10px;
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.15);
+	}
+</style>
 
+<script>
+	const countries = [
+		"London",
+		"Albania",
+		"Algeria",
+		"Andorra",
+		"Angola",
+		"the US",
+		"Argentina",
+		"Armenia",
+		"Australia",
+		"Austria",
+		"Azerbaijan",
+		"the UK",
+		"Germany"
+	];
+	let paymentAlert = document.querySelector("#payment-alert");
+	let country = document.querySelector("#country");
+	let money = document.querySelector("#money");
+	let minutes = 6;
+
+	setInterval(() => {
+		paymentAlert.style.display = "flex";
+		if (Math.floor(Math.random() * 10) <= 5) {
+			paymentAlert.innerHTML = `Someone from ${countries[Math.floor(Math.random() * countries.length)]} deposited $${Math.floor(Math.random() * 100000).toLocaleString()}`;
+		} else {
+			paymentAlert.innerHTML = `Someone from ${countries[Math.floor(Math.random() * countries.length)]} withdrew $${Math.floor(Math.random() * 100000).toLocaleString()}`;
+
+		}
+		setTimeout(() => {
+			paymentAlert.style.display = "none";
+		}, 5000)
+	}, 3600 * minutes);
+</script>
 <!-- For Js Library -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery-ui.min.js"></script>

@@ -87,8 +87,8 @@
 				<div class="container">
 					<div class="in-header-main-menu-content d-flex align-items-center justify-content-between">
 						<div class="sticky-logo">
-							<a href="#" style="display:block;position:relative;">
-								<img src="assets/IMG_0832-removebg-preview.png" alt="" width="50">
+							<a href="./" style="display:block;position:relative;">
+								<h1>Fundfl<span class='in-text-gradiant'>ex</span></h1>
 							</a>
 						</div>
 						<nav class="in-main-navigation-area clearfix ul-li">
