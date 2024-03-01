@@ -21,22 +21,16 @@ if ($showHeader) {
 					<div class="col-lg-3 col-md-6">
 						<div class="in-footer-widget">
 							<div class="logo-widget">
-								<div class="brand-logo">
+								<!-- <div class="brand-logo">
 									<a href="" style="display:block;height:70px;padding:0px;margin:0px;"><img
 											src="assets/1674546785664-removebg-preview.png" alt=""
 											style="width:100%; height:100%;object-fit:cover;"></a>
-								</div>
+								</div> -->
 								<div class="footer-text">
 									Investing in Fundflex offers more than just financial gains; it's a journey towards
 									prosperity and security.
 								</div>
-								<div class="footer-social d-flex">
-									<a href="https://www.facebook.com/profile.php?id=100094885226033&mibextid=JRoKGi"><i
-											class="fab fa-facebook-f"></i></a>
-									<a href="https://www.tiktok.com/@_blord_official?_t=8k3ieJEVcG6&_r=1"><i
-											class="fab fa-tiktok"></i></a>
-									<a href="https://wa.me/2349164890324"><i class="fab fa-whatsapp"></i></a>
-								</div>
+							
 							</div>
 						</div>
 					</div>
@@ -63,7 +57,7 @@ if ($showHeader) {
 												<i class="fal fa-envelope-open-text"></i>
 											</div>
 											<div class="inner-text">
-												support@blordgroup.com
+												support@fundflex.com
 											</div>
 										</a>
 									</div>
@@ -86,9 +80,9 @@ if ($showHeader) {
 							<div class="menu-widget headline ul-li-block">
 								<h3 class="widget-title">Our Company</h3>
 								<ul>
-									<li><a href="#">About</a></li>
-									<li><a href="#">Investment Options</a></li>
-									<li><a href="#">Pricing Plans</a></li>
+									<li><a href="./about.php">About</a></li>
+									<li><a href="./service.php">Investment Options</a></li>
+									<li><a href="./pricing.php">Pricing Plans</a></li>
 
 
 								</ul>
@@ -100,11 +94,11 @@ if ($showHeader) {
 							<div class="menu-widget headline ul-li-block">
 								<h3 class="widget-title">Quick Links</h3>
 								<ul>
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">Terms and Conditions </a></li>
-									<li><a href="#">Privacy Statement </a></li>
-									<li><a href="#">Login </a></li>
-									<li><a href="#">Sign up</a></li>
+									<li><a href="./faq.php">FAQ</a></li>
+									<li><a href="./termsandconditions.php">Terms and Conditions </a></li>
+									<li><a href="./privacy.php">Privacy Statement </a></li>
+									<li><a href="./login.php">Login </a></li>
+									<li><a href="./signup.php">Sign up</a></li>
 
 
 								</ul>
