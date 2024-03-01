@@ -39,30 +39,37 @@ include_once("./includes/header.php");
                             </p>
                         </div>
                         <div class="in-faq-contact-form">
-                            <form action="./handlers/add.php" method="post">
+                            <form action="./handlers/auth.php" method="post">
                                 <div class="row align-items-center">
                                     <div class="col-md-12">
                                         <input required style="padding:30px;" type="text" name="fullname"
                                             placeholder="Enter Fullname">
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 position-relative">
+                                        <span style='color:red;font-size:13px;position:absolute;top:-20px;'
+                                            id="username-err"></span>
                                         <input required style="padding:30px;" type="text" name="username"
                                             placeholder="Enter Username">
                                     </div>
-                                    <div class="col-md-12">
-                                        <input required style="padding:30px;" type="text" name="email" placeholder="Enter Email">
+                                    <div class="col-md-12 position-relative">
+                                        <span style='color:red;font-size:13px;position:absolute;top:-20px;'
+                                            id="email-err"></span>
+                                        <input required style="padding:30px;" type="email" name="email"
+                                            placeholder="Enter Email">
                                     </div>
                                     <div class="col-md-6">
                                         <input required style="padding:30px;" type="password" name="password"
                                             placeholder="Enter Password">
                                     </div>
 
-                                    <div class="col-md-6 ">
+                                    <div class="col-md-6  position-relative">
+                                        <span style='color:red;font-size:13px;position:absolute;top:-20px;'
+                                            id="password-err"></span>
                                         <input required style="padding:30px;" type="password" name="confirmPassword"
                                             placeholder="Confirm Password">
                                     </div>
                                     <div class="col-12 ">
-                                        <button type="submit" class="w-100">Sign Up</button>
+                                        <button name="signUp" type="submit" class="w-100">Sign Up</button>
                                     </div>
 
 
@@ -84,18 +91,61 @@ include_once("./includes/header.php");
 </section>
 <script>
     let passwords = document.querySelectorAll("[type='password']")
-    let button = document.querySelector("button");
-    button.onclick = (e) => {
-        if (passwords[0].value != passwords[1].value) {
-            passwords[1].style.outline = "1px solid red"
-            passwords[1].classList.add("animate-invalid")
-            setTimeout(() => {
-                passwords[1].classList.remove("animate-invalid")
-
-            }, 1000)
+    let email = document.querySelector("[type='email']");
+    let username = document.querySelector("[name='username']");
+    let form = document.querySelector("form");
+    let emailErr = document.querySelector("#email-err")
+    let passwordErr = document.querySelector("#password-err")
+    let usernameErr = document.querySelector("#username-err")
+    let err = {
+        email: false,
+        username: false
+    };
+    form.onsubmit = (e) => {
+        if (err.username) {
+            checkErr(username);
+            usernameErr.innerHTML = "Username already Exists";
             e.preventDefault();
-        } else {
+        }
 
+        if (err.email) {
+            checkErr(email);
+            emailErr.innerHTML = "Email already Exists";
+            e.preventDefault();
+        }
+
+
+
+        if (passwords[0].value != passwords[1].value) {
+            checkErr(passwords[1])
+            passwordErr.innerHTML = "Passwords do not match"
+            e.preventDefault();
+        }
+    }
+
+    // Checking if email exists
+    alreadyExists(email, "verifyEmail");
+    alreadyExists(username, "verifyUsername");
+
+    function checkErr(elem) {
+        elem.style.outline = "1px solid red"
+        elem.classList.add("animate-invalid")
+        setTimeout(() => {
+            elem.classList.remove("animate-invalid")
+        }, 2000)
+    }
+
+    function alreadyExists(elem, endpoint) {
+        elem.onblur = (e) => {
+            if (elem.value.length > 0) {
+                fetch(`./handlers/auth.php?${endpoint}=${elem.value}`).then(res => res.text()).then((data) => {
+                    if (data) {
+                        err[e.target.name] = true;
+                    } else {
+                        err[e.target.name] = false;
+                    }
+                })
+            }
         }
     }
 </script>

@@ -122,7 +122,7 @@ include_once("./includes/header.php");
 						insurance policy at no extra cost.
 					</rs-layer><!--
 
-							--><a id="slider-24-slide-60-layer-9" class="rs-layer rev-btn" href="contact.htnl" target="_blank"
+							--><a id="slider-24-slide-60-layer-9" class="rs-layer rev-btn" href="./signup.php" target="_blank"
 						rel="noopener" data-type="button" data-rsp_ch="on"
 						data-xy="xo:20px,17px,12px,7px;y:m;yo:73px,63px,55px,49px;"
 						data-text="w:normal;s:16,14,14,8;l:60,52,45,27;fw:500;" data-dim="minh:0px,none,none,none;"

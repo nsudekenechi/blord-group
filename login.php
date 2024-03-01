@@ -2,7 +2,25 @@
 $title = "Login";
 include_once("./includes/header.php");
 ?>
+<style>
+    .animate-invalid {
+        animation: shake 0.4s infinite linear;
+    }
 
+    @keyframes shake {
+        0% {
+            transform: translateX(0px);
+        }
+
+        50% {
+            transform: translateX(25px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+</style>
 <section id="in-faq-contact" class="in-faq-contact-section" style="padding:0px;">
     <div class="in-faq-contact-content" style="background-color: white;">
         <div class="row">
@@ -21,27 +39,32 @@ include_once("./includes/header.php");
                             </p>
                         </div>
                         <div class="in-faq-contact-form">
-                            <form action="#" method="get">
+                            <form action="./handlers/auth.php" method="post">
                                 <div class="row align-items-center">
                                     <div class="col-md-12">
-                                        <input style="padding:30px;"type="text" name="username" placeholder="Enter Username or Email">
+                                        <input style="padding:30px;" type="text" name="username"
+                                            placeholder="Enter Username or Email" required>
                                     </div>
-                                    <div class="col-md-12">
-                                        <input style="padding:30px;"type="password" name="password" placeholder="Enter Password">
+                                    <div class="col-md-12 position-relative">
+                                        <input style="padding:30px;" type="password" name="password"
+                                            placeholder="Enter Password" required>
+                                        <span id="err"
+                                            style="color:red;font-size:13px;position:absolute;width:100%;bottom:10px;left:10px;"></span>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <button type="submit" class="w-100">Login</button>
+                                        <button type="submit" class="w-100" name="login">Login</button>
                                     </div>
 
                                     <div class="col-md-6 d-md-flex justify-content-end mt-3">
-                                       <a href="./forgotpassword.php">Forgot Password</a>
+                                        <a href="./forgotpassword.php">Forgot Password</a>
                                     </div>
 
                                     <div class="col-md-12 d-flex justify-content-center my-5">
-                                    Don't have an account?  <a href="./signup.php" class="in-text-gradiant mx-2">Sign up here</a>
+                                        Don't have an account? <a href="./signup.php" class="in-text-gradiant mx-2">Sign
+                                            up here</a>
                                     </div>
                                     <div>
-                                        
+
                                     </div>
                                 </div>
                             </form>
@@ -52,7 +75,25 @@ include_once("./includes/header.php");
         </div>
     </div>
 </section>
+<script>
+    let inputs = document.querySelectorAll("input");
+    let err = document.querySelector("#err");
+    if (location.search.includes("=f")) {
+        inputs.forEach(input => {
+            checkErr(input)
+        })
+        err.innerHTML = "Incorrect username or password. Please try again."
 
+    }
+    function checkErr(elem) {
+        elem.style.outline = "1px solid red"
+        elem.classList.add("animate-invalid")
+        setTimeout(() => {
+            elem.classList.remove("animate-invalid")
+            elem.style.outline = "none"
+        }, 1000)
+    }
+</script>
 <?php
 require_once("./includes/footer.php");
 ?>

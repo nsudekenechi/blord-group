@@ -120,69 +120,70 @@ if ($showHeader) {
 
 	</footer>
 	<div id="payment-alert" class="in-pagination text-center ul-li">
-		
-	</div>
 
+	</div>
+	<style>
+		#payment-alert {
+			position: fixed;
+			width: fit-content;
+			display: none;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+			top: 70%;
+			left: 70%;
+			z-index: 10;
+			border: 1px solid var(--main-color);
+			color: black;
+			background-color: white;
+			height: 70px;
+			font-size: 13px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .15);
+		}
+	</style>
+	<script>
+		const countries = [
+			"London",
+			"Albania",
+			"Algeria",
+			"Andorra",
+			"Angola",
+			"the US",
+			"Argentina",
+			"Armenia",
+			"Australia",
+			"Austria",
+			"Azerbaijan",
+			"the UK",
+			"Germany"
+		];
+		let paymentAlert = document.querySelector("#payment-alert");
+		let country = document.querySelector("#country");
+		let money = document.querySelector("#money");
+		let minutes = 7;
+
+		setInterval(() => {
+			paymentAlert.style.display = "flex";
+			if (Math.floor(Math.random() * 10) <= 5) {
+				paymentAlert.innerHTML = `Someone from ${countries[Math.floor(Math.random() * countries.length)]} deposited $${Math.floor(Math.random() * 100000).toLocaleString()}`;
+			} else {
+				paymentAlert.innerHTML = `Someone from ${countries[Math.floor(Math.random() * countries.length)]} withdrew $${Math.floor(Math.random() * 100000).toLocaleString()}`;
+
+			}
+			setTimeout(() => {
+				paymentAlert.style.display = "none";
+			}, 5000)
+		}, 3600 * minutes);
+	</script>
 	<?php
 }
 ?>
 <!-- End of Footer section
 	============================================= -->
-<style>
-	#payment-alert {
-		position: fixed;
-		width: fit-content;
-		display: none;
-		justify-content: center;
-		align-items: center;
-		padding: 20px;
-		top: 70%;
-		left: 70%;
-		z-index: 10;
-		border: 1px solid var(--main-color);
-		color: black;
-		background-color: white;
-		height: 70px;
-		font-size: 13px;
-		border-radius: 10px;
-		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.15);
-	}
-</style>
 
-<script>
-	const countries = [
-		"London",
-		"Albania",
-		"Algeria",
-		"Andorra",
-		"Angola",
-		"the US",
-		"Argentina",
-		"Armenia",
-		"Australia",
-		"Austria",
-		"Azerbaijan",
-		"the UK",
-		"Germany"
-	];
-	let paymentAlert = document.querySelector("#payment-alert");
-	let country = document.querySelector("#country");
-	let money = document.querySelector("#money");
-	let minutes = 7;
 
-	setInterval(() => {
-		paymentAlert.style.display = "flex";
-		if (Math.floor(Math.random() * 10) <= 5) {
-			paymentAlert.innerHTML = `Someone from ${countries[Math.floor(Math.random() * countries.length)]} deposited $${Math.floor(Math.random() * 100000).toLocaleString()}`;
-		} else {
-			paymentAlert.innerHTML = `Someone from ${countries[Math.floor(Math.random() * countries.length)]} withdrew $${Math.floor(Math.random() * 100000).toLocaleString()}`;
 
-		}
-		setTimeout(() => {
-			paymentAlert.style.display = "none";
-		}, 5000)
-	}, 3600 * minutes);
-</script>
 <!-- For Js Library -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery-ui.min.js"></script>
