@@ -59,14 +59,14 @@ include_once("./includes/header.php");
                                     </div>
                                     <div class="col-md-6">
                                         <input required style="padding:30px;" type="password" name="password"
-                                            placeholder="Enter Password">
+                                            placeholder="Enter Password" minlength="6">
                                     </div>
 
                                     <div class="col-md-6  position-relative">
                                         <span style='color:red;font-size:13px;position:absolute;top:-20px;'
                                             id="password-err"></span>
                                         <input required style="padding:30px;" type="password" name="confirmPassword"
-                                            placeholder="Confirm Password">
+                                            placeholder="Confirm Password" minlength="6">
                                     </div>
                                     <div class="col-12 ">
                                         <button name="signUp" type="submit" class="w-100">Sign Up</button>
