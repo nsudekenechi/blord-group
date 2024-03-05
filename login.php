@@ -84,7 +84,19 @@ include_once("./includes/header.php");
         })
         err.innerHTML = "Incorrect username or password. Please try again."
 
+    } else if (location.search.includes("reset=s")) {
+        Toastify({
+            text: "Password Reset Sucessful",
+            duration: 3000,
+            close: true,
+            style: {
+                background: "green",
+                color: "white"
+            }
+
+        }).showToast();
     }
+
     function checkErr(elem) {
         elem.style.outline = "1px solid red"
         elem.classList.add("animate-invalid")

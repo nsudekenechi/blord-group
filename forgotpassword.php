@@ -68,6 +68,7 @@ include_once("./includes/header.php");
                     </div>
                 </div>
                 <script>
+
                     const email = document.querySelector("[type='email']");
                     const form = document.querySelector("form");
                     let emailExists = false;
@@ -87,9 +88,9 @@ include_once("./includes/header.php");
                             e.preventDefault();
                             email.classList.add("animate-invalid");
                             email.style.outline = "1px solid red";
-                            setTimeout(()=>{
+                            setTimeout(() => {
                                 email.classList.remove("animate-invalid")
-                            },2000)
+                            }, 2000)
                         }
                     }
                 </script>
@@ -107,7 +108,7 @@ include_once("./includes/header.php");
                                     </p>
                                 </div>
                                 <div class="in-faq-contact-form">
-                                    <form action="#" method="get">
+                                    <form action="./handlers/auth.php" method="post">
                                         <div class="row align-items-center">
                                             <div class="col-md-12">
                                                 <input style="padding:30px;" type="text" name="code" placeholder="Enter Code">
@@ -130,7 +131,20 @@ include_once("./includes/header.php");
                             </div>
                         </div>
                     </div>
+                    <script>
+                        if (location.search.includes("code=f")) {
+                            Toastify({
+                                text: "Invalid Code",
+                                duration: 3000,
+                                close: true,
+                                style: {
+                                    background: "red",
+                                    color: "white"
+                                }
 
+                            }).showToast();
+                        }
+                    </script>
                     <?php
                 } else {
                     ?>
@@ -144,7 +158,7 @@ include_once("./includes/header.php");
                                     </p>
                                 </div>
                                 <div class="in-faq-contact-form">
-                                    <form action="#" method="get">
+                                    <form action="./handlers/auth.php" method="post">
                                         <div class="row align-items-center">
                                             <div class="col-md-12">
                                                 <input style="padding:30px;" type="password" name="password"
@@ -157,7 +171,7 @@ include_once("./includes/header.php");
                                             </div>
 
                                             <div class="col-12">
-                                                <button type="submit" class="w-100">Reset Password</button>
+                                                <button type="submit" class="w-100" name="reset">Reset Password</button>
                                             </div>
 
                                             <div class="col-12 d-flex justify-content-center py-5">
@@ -178,15 +192,15 @@ include_once("./includes/header.php");
                         let button = document.querySelector("button");
                         button.onclick = (e) => {
                             if (passwords[0].value != passwords[1].value) {
+                                e.preventDefault();
                                 passwords[1].style.outline = "1px solid red"
                                 passwords[1].classList.add("animate-invalid")
                                 setTimeout(() => {
                                     passwords[1].classList.remove("animate-invalid")
                                     passwords[1].style.outline = "none"
                                 }, 1000)
-                                e.preventDefault();
                             } else {
-
+                                passwords[1].style.outline = "none"
                             }
                         }
                     </script>

@@ -70,7 +70,8 @@ if (isset($_POST["resetPassword"])) {
         $query = "INSERT INTO forgotpassword (email,code) VALUES ('$email', '$hashPassword')";
         $res = mysqli_query($conn, $query);
         if ($res) {
-            header("Location: ../forgotpassword.php?page=verify&id=$email");
+            $_SESSION["forgotpassword"] = $email;
+            header("Location: ../forgotpassword.php?page=verify");
         } else {
             header("Location: ../forgotpassword.php");
         }
@@ -78,6 +79,42 @@ if (isset($_POST["resetPassword"])) {
 
 }
 
+// Verify code
+if (isset($_POST["verifyCode"])) {
+    extract($_POST);
+    $email = $_SESSION["forgotpassword"];
+    $query = "SELECT * FROM forgotpassword WHERE email ='$email' ORDER BY id DESC LIMIT 1";
+    $res = mysqli_query($conn, $query);
+    $row = $res->fetch_assoc();
+    $verify = password_verify($code, $row["code"]);
+    if ($verify) {
+        header("Location: ../forgotpassword.php?page=reset");
+    } else {
+        header("Location: ../forgotpassword.php?page=verify&code=f");
+    }
+}
+
+// Reset Password
+if (isset($_POST["reset"])) {
+    extract($_POST);
+    $email = $_SESSION["forgotpassword"];
+    $hashPassword = password_hash($password, PASSWORD_DEFAULT);
+    // Updating user's password
+    $query = "UPDATE users SET password = '$hashPassword' WHERE email = '$email'";
+    $res = mysqli_query($conn, $query);
+    if ($res) {
+        // Deleting user from forgotpassword
+        $query = "DELETE FROM forgotpassword WHERE email='$email'";
+        $res = mysqli_query($conn, $query);
+        // Deleting all sessions
+        session_unset();
+        session_destroy();
+        header("Location: ../login.php?reset=s");
+    } else {
+        header("Location: ../forgotpassword.php?page=reset&reset=f");
+    }
+
+}
 function generateRandomPassword($length)
 {
     $characters = "0123456789";
@@ -85,6 +122,5 @@ function generateRandomPassword($length)
     for ($i = 1; $i <= $length; $i++) {
         $code .= $characters[rand(0, strlen($characters) - 1)];
     }
-    // echo $characters[rand(0, strlen($characters))];
     return $code;
 }
