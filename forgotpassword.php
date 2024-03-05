@@ -43,7 +43,7 @@ include_once("./includes/header.php");
                                 </p>
                             </div>
                             <div class="in-faq-contact-form">
-                                <form action="./handlers/add.php" method="post">
+                                <form action="./handlers/auth.php" method="post">
                                     <div class="row align-items-center">
                                         <div class="col-md-12">
                                             <input style="padding:30px;" type="email" name="email"
@@ -67,7 +67,32 @@ include_once("./includes/header.php");
                         </div>
                     </div>
                 </div>
+                <script>
+                    const email = document.querySelector("[type='email']");
+                    const form = document.querySelector("form");
+                    let emailExists = false;
+                    email.onblur = () => {
+                        fetch(`./handlers/auth.php?verifyEmail=${email.value}`).then(res => res.text()).then(data => {
+                            console.log(data)
+                            if (data) {
+                                emailExists = true;
+                            } else {
+                                emailExists = false;
+                            }
+                        })
+                    }
 
+                    form.onsubmit = (e) => {
+                        if (!emailExists) {
+                            e.preventDefault();
+                            email.classList.add("animate-invalid");
+                            email.style.outline = "1px solid red";
+                            setTimeout(()=>{
+                                email.classList.remove("animate-invalid")
+                            },2000)
+                        }
+                    }
+                </script>
                 <?php
             } else {
                 if ($_GET["page"] == "verify") {

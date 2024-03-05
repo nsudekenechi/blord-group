@@ -1,5 +1,6 @@
 <?php
 require_once("../db/db_connect.php");
+require_once("./email.php");
 session_start();
 
 // Adding Users to DB
@@ -57,4 +58,33 @@ if (isset($_POST["login"])) {
     } else {
         header("Location: ../login.php?auth=f");
     }
+}
+
+// Forgot password
+if (isset($_POST["resetPassword"])) {
+    extract($_POST);
+    $code = generateRandomPassword(6);
+    $hashPassword = password_hash($code, PASSWORD_DEFAULT);
+    $sendmail = sendEmail($email, "Forgot Password", "Your Passcode is $code");
+    if ($sendmail) {
+        $query = "INSERT INTO forgotpassword (email,code) VALUES ('$email', '$hashPassword')";
+        $res = mysqli_query($conn, $query);
+        if ($res) {
+            header("Location: ../forgotpassword.php?page=verify&id=$email");
+        } else {
+            header("Location: ../forgotpassword.php");
+        }
+    }
+
+}
+
+function generateRandomPassword($length)
+{
+    $characters = "0123456789";
+    $code = "";
+    for ($i = 1; $i <= $length; $i++) {
+        $code .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    // echo $characters[rand(0, strlen($characters))];
+    return $code;
 }
