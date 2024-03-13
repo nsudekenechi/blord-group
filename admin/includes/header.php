@@ -98,7 +98,7 @@ $row = $res->fetch_assoc();
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/invest/invest-form.html" class="nk-menu-link">
+                                            <a href="html/invest/invest-form.php" class="nk-menu-link">
                                                 <span class="nk-menu-text">Investment Process</span>
                                             </a>
                                         </li>
