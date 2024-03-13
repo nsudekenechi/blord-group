@@ -51,7 +51,7 @@ if (isset($_POST["login"])) {
 
         if (password_verify($password, $row["password"])) {
             $_SESSION["user"] = $row["id"];
-            header("Location: ../login.php?auth=s");
+            header("Location: ../admin/");
         } else {
             header("Location: ../login.php?auth=f");
         }
