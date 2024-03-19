@@ -1,8 +1,8 @@
 <?php
-require_once("../db/db_connect.php");
+require_once ("../db/db_connect.php");
 
 session_start();
-if (!isset($_SESSION["user"])) {
+if (!isset ($_SESSION["user"])) {
     header("Location: ../login.php");
 }
 $title;
@@ -10,6 +10,8 @@ $userid = $_SESSION["user"];
 $query = "SELECT * FROM users WHERE id='$userid'";
 $res = mysqli_query($conn, $query);
 $row = $res->fetch_assoc();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx" class="js">
@@ -33,6 +35,7 @@ $row = $res->fetch_assoc();
 </head>
 
 <body class="nk-body npc-invest bg-lighter ">
+
     <div class="nk-app-root">
         <!-- wrap @s -->
         <div class="nk-wrap ">
@@ -87,7 +90,7 @@ $row = $res->fetch_assoc();
                                         <span class="nk-menu-text">Profile</span>
                                     </a>
                                 </li>
-                                <li class="nk-menu-item active has-sub">
+                                <li class="nk-menu-item  has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
                                         <span class="nk-menu-text">Pages</span>
                                     </a>
@@ -268,7 +271,9 @@ $row = $res->fetch_assoc();
                                             </div>
                                             <div class="user-info d-none d-xl-block">
                                                 <div class="user-status user-status-verified">Verified</div>
-                                                <div class="user-name dropdown-indicator"><?=$row['fullname'];?></div>
+                                                <div class="user-name dropdown-indicator">
+                                                    <?= $row['fullname']; ?>
+                                                </div>
                                             </div>
                                         </div>
                                     </a>
@@ -277,12 +282,18 @@ $row = $res->fetch_assoc();
                                         <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                             <div class="user-card">
                                                 <div class="user-avatar">
-                                                    <span><?=$row['fullname'][0] . explode(" ", $row['fullname'])[1][0]?></span>
-                                                   
+                                                    <span>
+                                                        <?= $row['fullname'][0] . explode(" ", $row['fullname'])[1][0] ?>
+                                                    </span>
+
                                                 </div>
                                                 <div class="user-info">
-                                                    <span class="lead-text"><?=$row['fullname'];?></span>
-                                                    <span class="sub-text"><?=$row['email'];?></span>
+                                                    <span class="lead-text">
+                                                        <?= $row['fullname']; ?>
+                                                    </span>
+                                                    <span class="sub-text">
+                                                        <?= $row['email']; ?>
+                                                    </span>
                                                 </div>
                                                 <div class="user-action">
                                                     <a class="btn btn-icon me-n2"
@@ -329,4 +340,41 @@ $row = $res->fetch_assoc();
                 </div><!-- .container-fliud -->
             </div>
             <!-- main header @e -->
-            <h1><?=$_SESSION["user"];?></h1>
+            <h1>
+                <?= $_SESSION["user"]; ?>
+            </h1>
+            <?php
+            // Updating profits
+            $q = "SELECT deposits.id  deposit_id, deposits.end_date, plans.increase, deposits.amount,deposits.last_profit FROM deposits 
+             JOIN plans ON deposits.plan = plans.id  WHERE deposits.user = '$userid' AND deposits.active=true";
+            $res = mysqli_query($conn, $q);
+            if ($res->num_rows > 0) {
+                while ($r = $res->fetch_assoc()) {
+                    $deposit_id = $r['deposit_id'];
+
+                    $currDate = new DateTime();
+                    $endDate = new DateTime($r["end_date"]);
+                    // Validating if  user's plan havent expired and making sure multiple profits dont happen in one day.
+                    if ($currDate->diff($endDate)->days > 0 && $r['last_profit'] != date('d-M-Y')) {
+
+                        // Updaing user's balance to new profit
+                        $pr = $r['amount'] * ($r['increase'] / 100);
+                        $q1 = "UPDATE users SET balance = balance + $pr, profits = profits + $pr  WHERE id = '$userid'";
+                        $res1 = mysqli_query($conn, $q1);
+
+                        // Updating last's profit so that users cant get multiple profits in one day
+                        $todayDate = date('d-M-Y');
+                        $q1 = "UPDATE deposits SET last_profit='$todayDate' WHERE id='$deposit_id'";
+                        $res1 = mysqli_query($conn, $q1);
+
+                    } else {
+                        // Updating active to false when days have expired
+                        $q1 = "UPDATE deposits SET active=false WHERE id = '$deposit_id'";
+                        $res1 = mysqli_query($conn, $q1);
+                    }
+
+                }
+            }
+
+
+            ?>

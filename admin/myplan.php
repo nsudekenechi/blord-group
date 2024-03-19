@@ -295,7 +295,7 @@ require_once "./includes/header.php";
 <!-- content @e -->
 <?php
 
-$title = "My Plan";
+
 require_once "./includes/footer.php";
 
 ?>

@@ -28,42 +28,49 @@ require_once "./includes/header.php";
                         </div><!-- .nk-block-head-content -->
                         <div class="nk-block-head-content d-none d-md-block">
                             <div class="nk-slider nk-slider-s1">
-                                <div class="slider-init" data-slick='{"dots": true, "arrows": false, "fade": true}'>
-                                    <div class="slider-item">
-                                        <div class="nk-iv-wg1">
-                                            <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
-                                            <h6 class="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
-                                            <a href="#" class="nk-iv-wg1-link link link-light"><em
-                                                    class="icon ni ni-trend-up"></em> <span>Check Details</span></a>
-                                            <div class="nk-iv-wg1-progress">
-                                                <div class="progress-bar bg-primary" data-progress="80"></div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .slider-item -->
-                                    <div class="slider-item">
-                                        <div class="nk-iv-wg1">
-                                            <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
-                                            <h6 class="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
-                                            <a href="#" class="nk-iv-wg1-link link link-light"><em
-                                                    class="icon ni ni-trend-up"></em> <span>Check Details</span></a>
-                                            <div class="nk-iv-wg1-progress">
-                                                <div class="progress-bar bg-primary" data-progress="80"></div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .slider-item -->
-                                    <div class="slider-item">
-                                        <div class="nk-iv-wg1">
-                                            <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
-                                            <h6 class="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
-                                            <a href="#" class="nk-iv-wg1-link link link-light"><em
-                                                    class="icon ni ni-trend-up"></em> <span>Check Details</span></a>
-                                            <div class="nk-iv-wg1-progress">
-                                                <div class="progress-bar bg-primary" data-progress="80"></div>
-                                            </div>
-                                        </div>
-                                    </div><!-- .slider-item -->
-                                </div>
-                                <div class="slider-dots"></div>
+                                <?php
+                                // Displaying amount from details table and other columns from plans table
+                                $query = "SELECT  deposits.amount, plans.name, plans.increase, plans.days FROM 
+                                      deposits 
+                                      JOIN plans
+                                      ON deposits.plan = plans.id
+                                      WHERE deposits.user='$userid' AND deposits.active = true LIMIT 3";
+                                $res = mysqli_query($conn, $query);
+                                if ($res->num_rows > 0) {
+                                    ?>
+                                    <div class="slider-init" data-slick='{"dots": true, "arrows": false, "fade": true}'>
+                                        <?php
+
+                                        while ($row2 = mysqli_fetch_assoc($res)) {
+                                            ?>
+                                            <div class="slider-item">
+                                                <div class="nk-iv-wg1">
+                                                    <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
+                                                    <h6 class="nk-iv-wg1-info title">
+                                                        <?= $row2['name']; ?> -
+                                                        <?= $row2['increase']; ?>% for
+                                                        <?= $row2['days']; ?> Days
+                                                    </h6>
+                                                    <a href="#" class="nk-iv-wg1-link link link-light"><em
+                                                            class="icon ni ni-trend-up"></em> <span>Check Details</span></a>
+                                                    <div class="nk-iv-wg1-progress">
+                                                        <div class="progress-bar bg-primary" data-progress="80"></div>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .slider-item -->
+                                            <?php
+                                        }
+                                        ?>
+
+                                    </div>
+                                    <div class="slider-dots"></div>
+
+                                    <?php
+
+
+                                }
+
+                                ?>
                             </div><!-- .nk-slider -->
                         </div><!-- .nk-block-head-content -->
                     </div><!-- .nk-block-between -->
@@ -95,9 +102,22 @@ require_once "./includes/header.php";
                                         <div class="nk-iv-wg2-title">
                                             <h6 class="title">Account Balance <em class="icon ni ni-info"></em></h6>
                                         </div>
+                                        <?php
+                                        $query = "SELECT SUM(increase) FROM deposits
+                                         INNER JOIN plans 
+                                         ON deposits.plan = plans.id
+                                         WHERE deposits.active = true
+                                         ";
+                                        $res = mysqli_query($conn, $query);
+                                        $increase = $res->fetch_column();
+
+                                        ?>
                                         <div class="nk-iv-wg2-text">
-                                            <div class="nk-iv-wg2-amount"> $<?=number_format($row['balance'],2);?><span class="change up"><span
-                                                        class="sign"></span>3.4%</span>
+                                            <div class="nk-iv-wg2-amount"> $
+                                                <?= number_format($row['balance'], 2); ?>
+                                                <span class="change up"><span class="sign"></span>
+                                                    <?= $increase; ?>%
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -111,9 +131,17 @@ require_once "./includes/header.php";
                                         <div class="nk-iv-wg2-title">
                                             <h6 class="title">Total Invested <em class="icon ni ni-info"></em></h6>
                                         </div>
+                                        <?php
+                                        $query = "SELECT count(amount) FROM deposits WHERE user = '$userid' AND active = true";
+                                        $res = mysqli_query($conn, $query);
+                                        $increase = $res->fetch_column();
+                                        ?>
                                         <div class="nk-iv-wg2-text">
-                                            <div class="nk-iv-wg2-amount">$<?=number_format($row['invested'],2);?><span class="change up"><span
-                                                        class="sign"></span>2.8%</span>
+                                            <div class="nk-iv-wg2-amount">$
+                                                <?= number_format($row['invested'], 2); ?><span class="change up"><span
+                                                        class="sign"></span>
+                                                    <?= $increase / 100; ?>%
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -128,8 +156,19 @@ require_once "./includes/header.php";
                                             <h6 class="title">Total Profits <em class="icon ni ni-info"></em></h6>
                                         </div>
                                         <div class="nk-iv-wg2-text">
-                                            <div class="nk-iv-wg2-amount">$<?=number_format($row['profits'],2);?><span class="change down"><span
-                                                        class="sign"></span>1.4%</span>
+                                            <div class="nk-iv-wg2-amount">$
+                                                <?= number_format($row['profits'], 2); ?>
+                                                <?php
+                                                if ($increase) {
+                                                    ?>
+                                                    <span class="change up">
+                                                        <span class="sign"></span>
+                                                        <?= $increase / 100; ?> %
+                                                    </span>
+                                                    <?php
+                                                }
+                                                ?>
+
                                             </div>
                                         </div>
                                     </div>
@@ -149,26 +188,30 @@ require_once "./includes/header.php";
                                         </div>
                                         <div class="nk-iv-wg2-text">
                                             <div class="nk-iv-wg2-amount ui-v2">
-                                           $<?=number_format($row['withdrawn'],2);?>
+                                                $
+                                                <?= number_format($row['withdrawn'], 2); ?>
                                             </div>
                                             <ul class="nk-iv-wg2-list">
                                                 <li>
                                                     <span class="item-label">Available Funds</span>
-                                                    <span class="item-value"><?=number_format($row['balance'],2);?></span>
+                                                    <span class="item-value">
+                                                        $
+                                                        <?= number_format($row['balance'], 2); ?>
+                                                    </span>
                                                 </li>
                                                 <li>
                                                     <span class="item-label">Invested Funds</span>
-                                                    <span class="item-value"><?=number_format($row['invested'],2);?></span>
+                                                    <span class="item-value">
+                                                        $
+                                                        <?= number_format($row['invested'], 2); ?>
+                                                    </span>
                                                 </li>
-                                                <li class="total">
-                                                    <span class="item-label">Total</span>
-                                                    <span class="item-value"><?=number_format($row['invested'] + $row['balance'], 2 );?></span>
-                                                </li>
+
                                             </ul>
                                         </div>
                                         <div class="nk-iv-wg2-cta">
                                             <a href="#" class="btn btn-primary btn-lg btn-block">Withdraw Funds</a>
-                                            <a href="#" class="btn btn-trans btn-block">Deposit Funds</a>
+                                            <!-- <a href="#" class="btn btn-trans btn-block">Deposit Funds</a> -->
                                         </div>
                                     </div>
                                 </div>
@@ -181,33 +224,48 @@ require_once "./includes/header.php";
                                         <div class="nk-iv-wg2-title">
                                             <h6 class="title">This Month Profit <em
                                                     class="icon ni ni-info text-primary"></em></h6>
+                                            <?php
+                                            $currMonth = date('M');
+                                            $query = "SELECT SUM(deposits.amount * plans.increase/100) FROM deposits JOIN plans ON deposits.plan=plans.id
+                                            WHERE deposits.start_date LIKE '%$currMonth%'";
+                                            $res = mysqli_query($conn, $query);
+                                            $profit = $res->fetch_column();
+                                            ?>
                                         </div>
                                         <div class="nk-iv-wg2-text">
-                                            <div class="nk-iv-wg2-amount ui-v2">1,457.23 <span class="change up"><span
-                                                        class="sign"></span>4.5%</span></div>
+                                            <div class="nk-iv-wg2-amount ui-v2">
+                                                $
+                                                <?= number_format($profit, 2); ?><span class="change up"><span
+                                                        class="sign"></span></span>
+                                            </div>
                                             <ul class="nk-iv-wg2-list">
                                                 <li>
                                                     <span class="item-label">Profits</span>
-                                                    <span class="item-value">1,045.21</span>
+                                                    <span class="item-value">
+                                                        <?= number_format($profit, 2); ?>
+                                                    </span>
                                                 </li>
                                                 <li>
                                                     <span class="item-label">Referrals</span>
-                                                    <span class="item-value">212.02</span>
+                                                    <span class="item-value">0.00</span>
                                                 </li>
                                                 <li>
                                                     <span class="item-label">Rewards</span>
-                                                    <span class="item-value">200.00</span>
+                                                    <span class="item-value">0.00</span>
                                                 </li>
                                                 <li class="total">
                                                     <span class="item-label">Total Profit</span>
-                                                    <span class="item-value">1,457.23</span>
+                                                    <span class="item-value">
+                                                        <?= number_format($profit, 2); ?>
+                                                    </span>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="nk-iv-wg2-cta">
-                                            <a href="#" class="btn btn-primary btn-lg btn-block">Invest & Earn</a>
-                                            <div class="cta-extra">Earn up to 25$ <a href="#"
-                                                    class="link link-dark">Refer friend!</a></div>
+                                            <a href="./invest.php" class="btn btn-primary btn-lg btn-block">Invest &
+                                                Earn</a>
+                                            <!-- <div class="cta-extra">Earn up to 25$ <a href="#"
+                                                    class="link link-dark">Refer friend!</a></div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -221,35 +279,51 @@ require_once "./includes/header.php";
                                             <h6 class="title">My Investment</h6>
                                         </div>
                                         <div class="nk-iv-wg2-text">
-                                            <div class="nk-iv-wg2-amount ui-v2">319 <span class="sub">03</span> Active
+                                            <?php
+                                            $query = "SELECT * FROM deposits WHERE user='$userid' AND active = true";
+                                            $res = mysqli_query($conn, $query);
+                                            $activePlans = mysqli_num_rows($res);
+                                            ?>
+                                            <div class="nk-iv-wg2-amount ui-v2">
+
+                                                <span class="sub">
+                                                    <?= $activePlans < 10 ? "0$activePlans" : $activePlans; ?>
+                                                </span> Active
                                             </div>
                                             <ul class="nk-iv-wg2-list">
-                                                <li>
-                                                    <span class="item-label"><a href="#">Silver</a> <small>- 4.76% for
-                                                            21 Days</small></span>
-                                                    <span class="item-value">2,500.00</span>
-                                                </li>
-                                                <li>
-                                                    <span class="item-label"><a href="#">Silver</a> <small>- 4.76% for
-                                                            21 Days</small></span>
-                                                    <span class="item-value">2,000.00</span>
-                                                </li>
-                                                <li>
-                                                    <span class="item-label"><a href="#">Dimond</a> <small>- 14.29% for
-                                                            14 Days</small></span>
-                                                    <span class="item-value">8,000.00</span>
-                                                </li>
-                                                <li>
-                                                    <span class="item-label"><a href="#">Starter</a> <small>- 1.67% for
-                                                            30 Days</small></span>
-                                                    <span class="item-value">335.00</span>
-                                                </li>
+                                                <?php
+                                                // Displaying amount from details table and other columns from plans table
+                                                $query = "SELECT  deposits.amount, plans.name, plans.increase, plans.days FROM 
+                                                deposits 
+                                                JOIN plans
+                                                ON deposits.plan = plans.id
+                                                WHERE deposits.user='$userid' AND deposits.active = true  LIMIT 4";
+                                                $res = mysqli_query($conn, $query);
+                                                while ($row = mysqli_fetch_assoc($res)) {
+                                                    ?>
+                                                    <li>
+                                                        <span class="item-label"><a href="#">
+                                                                <?= $row['name']; ?>
+                                                            </a> <small>-
+                                                                <?= $row['increase']; ?>% for
+                                                                <?= $row['days']; ?> Days
+                                                            </small></span>
+                                                        <span class="item-value">
+                                                            $
+                                                            <?= number_format($row['amount'], 2); ?>
+                                                        </span>
+                                                    </li>
+                                                    <?php
+                                                }
+                                                ?>
+
                                             </ul>
                                         </div>
                                         <div class="nk-iv-wg2-cta">
-                                            <a href="#" class="btn btn-light btn-lg btn-block">See all Investment</a>
-                                            <div class="cta-extra">Check out <a href="#" class="link link-dark">Analytic
-                                                    Report</a></div>
+                                            <a href="./myplan.php" class="btn btn-light btn-lg btn-block">See all
+                                                Investment</a>
+                                            <!-- <div class="cta-extra">Check out <a href="#" class="link link-dark">Analytic
+                                                    Report</a></div> -->
                                         </div>
                                     </div>
                                 </div>
