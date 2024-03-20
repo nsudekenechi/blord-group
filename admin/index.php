@@ -30,18 +30,20 @@ require_once "./includes/header.php";
                             <div class="nk-slider nk-slider-s1">
                                 <?php
                                 // Displaying amount from details table and other columns from plans table
-                                $query = "SELECT  deposits.amount, plans.name, plans.increase, plans.days FROM 
+                                $query = "SELECT  deposits.end_date,deposits.amount, plans.name, plans.increase, plans.days FROM 
                                       deposits 
                                       JOIN plans
                                       ON deposits.plan = plans.id
                                       WHERE deposits.user='$userid' AND deposits.active = true LIMIT 3";
                                 $res = mysqli_query($conn, $query);
+                                $currDate = new DateTime(date('d-M-Y'));
                                 if ($res->num_rows > 0) {
                                     ?>
                                     <div class="slider-init" data-slick='{"dots": true, "arrows": false, "fade": true}'>
                                         <?php
 
                                         while ($row2 = mysqli_fetch_assoc($res)) {
+                                            $endDate = new DateTime($row2['end_date']);
                                             ?>
                                             <div class="slider-item">
                                                 <div class="nk-iv-wg1">
@@ -50,11 +52,12 @@ require_once "./includes/header.php";
                                                         <?= $row2['name']; ?> -
                                                         <?= $row2['increase']; ?>% for
                                                         <?= $row2['days']; ?> Days
+
                                                     </h6>
-                                                    <a href="#" class="nk-iv-wg1-link link link-light"><em
-                                                            class="icon ni ni-trend-up"></em> <span>Check Details</span></a>
+
                                                     <div class="nk-iv-wg1-progress">
-                                                        <div class="progress-bar bg-primary" data-progress="80"></div>
+                                                        <div class="progress-bar bg-primary"
+                                                            data-progress="<?= 100 / $currDate->diff($endDate)->days ?>"></div>
                                                     </div>
                                                 </div>
                                             </div><!-- .slider-item -->
@@ -106,7 +109,8 @@ require_once "./includes/header.php";
                                         $query = "SELECT SUM(increase) FROM deposits
                                          INNER JOIN plans 
                                          ON deposits.plan = plans.id
-                                         WHERE deposits.active = true
+                                         WHERE deposits.active = true AND deposits.last_profit IS NOT NULL
+
                                          ";
                                         $res = mysqli_query($conn, $query);
                                         $increase = $res->fetch_column();
@@ -115,9 +119,16 @@ require_once "./includes/header.php";
                                         <div class="nk-iv-wg2-text">
                                             <div class="nk-iv-wg2-amount"> $
                                                 <?= number_format($row['balance'], 2); ?>
-                                                <span class="change up"><span class="sign"></span>
-                                                    <?= $increase; ?>%
-                                                </span>
+                                                <?php
+                                                if ($increase > 0) {
+                                                    ?>
+                                                    <span class="change up"><span class="sign"></span>
+                                                        <?= $increase; ?>%
+                                                    </span>
+                                                    <?php
+                                                }
+                                                ?>
+
                                             </div>
                                         </div>
                                     </div>
@@ -138,10 +149,16 @@ require_once "./includes/header.php";
                                         ?>
                                         <div class="nk-iv-wg2-text">
                                             <div class="nk-iv-wg2-amount">$
-                                                <?= number_format($row['invested'], 2); ?><span class="change up"><span
-                                                        class="sign"></span>
-                                                    <?= $increase / 100; ?>%
-                                                </span>
+                                                <?= number_format($row['invested'], 2); ?>
+                                                <?php
+                                                if ($res->num_rows > 0) {
+                                                    ?>
+                                                    <span class="change up"><span class="sign"></span>
+                                                        <?= $increase / 100; ?>%
+                                                    </span>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -159,11 +176,13 @@ require_once "./includes/header.php";
                                             <div class="nk-iv-wg2-amount">$
                                                 <?= number_format($row['profits'], 2); ?>
                                                 <?php
-                                                if ($increase) {
+                                                $query = "SELECT profits from users WHERE id='$userid'";
+                                                $res = mysqli_query($conn, $query);
+                                                if ($res->fetch_column() > 0) {
                                                     ?>
                                                     <span class="change up">
                                                         <span class="sign"></span>
-                                                        <?= $increase / 100; ?> %
+                                                        <?= $res->fetch_column() / 100; ?> %
                                                     </span>
                                                     <?php
                                                 }
@@ -227,7 +246,7 @@ require_once "./includes/header.php";
                                             <?php
                                             $currMonth = date('M');
                                             $query = "SELECT SUM(deposits.amount * plans.increase/100) FROM deposits JOIN plans ON deposits.plan=plans.id
-                                            WHERE deposits.start_date LIKE '%$currMonth%'";
+                                            WHERE deposits.last_profit LIKE '%$currMonth%'";
                                             $res = mysqli_query($conn, $query);
                                             $profit = $res->fetch_column();
                                             ?>
@@ -235,8 +254,16 @@ require_once "./includes/header.php";
                                         <div class="nk-iv-wg2-text">
                                             <div class="nk-iv-wg2-amount ui-v2">
                                                 $
-                                                <?= number_format($profit, 2); ?><span class="change up"><span
-                                                        class="sign"></span></span>
+                                                <?= number_format($profit, 2); ?>
+                                                <?php
+                                                if ($profit > 0) {
+                                                    ?>
+                                                    <span class="change up">
+                                                        <span class="sign"></span>
+                                                    </span>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div>
                                             <ul class="nk-iv-wg2-list">
                                                 <li>
