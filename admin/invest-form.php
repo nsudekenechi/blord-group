@@ -289,13 +289,13 @@ require_once ("./includes/header.php");
                                                 <li>
                                                     <div class="sub-text">Term start at</div>
                                                     <div class="lead-text">
-                                                        <?= date('d-M-Y'); ?> <small>(Today)</small>
+                                                        <?= date('d-M-Y', strtotime('1 day')); ?> <small></small>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="sub-text">Term end at</div>
                                                     <div class="lead-text">
-                                                        <?= date('d-M-Y', strtotime($row['days'] . "days")); ?>
+                                                        <?= date('d-M-Y', strtotime($row['days'] + 1 . "days")); ?>
                                                     </div>
                                                 </li>
                                             </ul>

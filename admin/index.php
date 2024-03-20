@@ -280,8 +280,8 @@ require_once "./includes/header.php";
                                         </div>
                                         <div class="nk-iv-wg2-text">
                                             <?php
-                                            $query = "SELECT * FROM deposits WHERE user='$userid' AND active = true";
-                                            $res = mysqli_query($conn, $query);
+                                            $q = "SELECT * FROM deposits WHERE user='$userid' AND active = true";
+                                            $res = mysqli_query($conn, $q);
                                             $activePlans = mysqli_num_rows($res);
                                             ?>
                                             <div class="nk-iv-wg2-amount ui-v2">

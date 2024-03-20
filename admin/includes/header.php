@@ -343,38 +343,3 @@ $row = $res->fetch_assoc();
             <h1>
                 <?= $_SESSION["user"]; ?>
             </h1>
-            <?php
-            // Updating profits
-            $q = "SELECT deposits.id  deposit_id, deposits.end_date, plans.increase, deposits.amount,deposits.last_profit FROM deposits 
-             JOIN plans ON deposits.plan = plans.id  WHERE deposits.user = '$userid' AND deposits.active=true";
-            $res = mysqli_query($conn, $q);
-            if ($res->num_rows > 0) {
-                while ($r = $res->fetch_assoc()) {
-                    $deposit_id = $r['deposit_id'];
-
-                    $currDate = new DateTime();
-                    $endDate = new DateTime($r["end_date"]);
-                    // Validating if  user's plan havent expired and making sure multiple profits dont happen in one day.
-                    if ($currDate->diff($endDate)->days > 0 && $r['last_profit'] != date('d-M-Y')) {
-
-                        // Updaing user's balance to new profit
-                        $pr = $r['amount'] * ($r['increase'] / 100);
-                        $q1 = "UPDATE users SET balance = balance + $pr, profits = profits + $pr  WHERE id = '$userid'";
-                        $res1 = mysqli_query($conn, $q1);
-
-                        // Updating last's profit so that users cant get multiple profits in one day
-                        $todayDate = date('d-M-Y');
-                        $q1 = "UPDATE deposits SET last_profit='$todayDate' WHERE id='$deposit_id'";
-                        $res1 = mysqli_query($conn, $q1);
-
-                    } else {
-                        // Updating active to false when days have expired
-                        $q1 = "UPDATE deposits SET active=false WHERE id = '$deposit_id'";
-                        $res1 = mysqli_query($conn, $q1);
-                    }
-
-                }
-            }
-
-
-            ?>
