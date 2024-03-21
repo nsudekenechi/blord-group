@@ -10,9 +10,8 @@ if ($res->num_rows > 0) {
         $deposit_id = $r['deposit_id'];
         $userid = $r['user'];
         $currDate = new DateTime(date('d-M-Y h:i'));
-        $startDate = new DateTime($r["start_date"]);
+        $startDate = new DateTime(date("d-M-Y h:i", strtotime($r["start_date"] . '+24 hours')));
         $endDate = new DateTime($r["end_date"]);
-
         if (!$r['last_profit']) {
             if ($currDate->diff($startDate)->h <= 0) {
                 updateProfit($r, $conn, $userid, $deposit_id, $currDate->format('d-M-Y h:i'));

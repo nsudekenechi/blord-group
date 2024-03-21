@@ -5,7 +5,7 @@ $user = $_SESSION["user"];
 // Depositing into user's account
 if (isset ($_POST["deposit"])) {
     extract($_POST);
-    $startDate = date('d-M-Y h:i', strtotime('1 day'));
+    $startDate = date('d-M-Y h:i');
     $endDate = date('d-M-Y h:i', strtotime($days . 'days'));
     $query = "INSERT INTO deposits (amount,user,plan,start_date,end_date)  VALUES ('$amount', '$user', '$plan', '$startDate', '$endDate')";
     $res = mysqli_query($conn, $query);

@@ -19,7 +19,7 @@ require_once "./includes/header.php";
                                         <?= $row['fullname']; ?>
                                     </h2>
                                 </div>
-                                <div><a href="html/invest/schemes.php" class="btn btn-white btn-light">My Plans <em
+                                <div><a href="./myplan.php" class="btn btn-white btn-light">My Plans <em
                                             class="icon ni ni-arrow-long-right ms-2"></em></a></div>
                             </div>
                             <div class="nk-block-des">
@@ -52,12 +52,12 @@ require_once "./includes/header.php";
                                                         <?= $row2['name']; ?> -
                                                         <?= $row2['increase']; ?>% for
                                                         <?= $row2['days']; ?> Days
-
                                                     </h6>
 
                                                     <div class="nk-iv-wg1-progress">
                                                         <div class="progress-bar bg-primary"
-                                                            data-progress="<?= 100 / $currDate->diff($endDate)->days ?>"></div>
+                                                            data-progress="<?= 100 / ($currDate->diff($endDate)->days + 1) ?>">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div><!-- .slider-item -->
@@ -78,7 +78,7 @@ require_once "./includes/header.php";
                         </div><!-- .nk-block-head-content -->
                     </div><!-- .nk-block-between -->
                 </div><!-- .nk-block-head -->
-                <div class="nk-block">
+                <!-- <div class="nk-block">
                     <div class="nk-news card card-bordered">
                         <div class="card-inner">
                             <div class="nk-news-list">
@@ -94,8 +94,10 @@ require_once "./includes/header.php";
                                 </a>
                             </div>
                         </div>
-                    </div><!-- .card -->
-                </div><!-- .nk-block -->
+                    </div>
+                </div> -->
+                <!-- .card -->
+                <!-- .nk-block -->
                 <div class="nk-block">
                     <div class="row gy-gs">
                         <div class="col-md-6 col-lg-4">

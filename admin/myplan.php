@@ -208,8 +208,19 @@ require_once "./includes/header.php";
                 <div class="nk-block nk-block-lg">
                     <div class="nk-block-head-sm">
                         <div class="nk-block-between">
+                            <?php
+                            $query = "SELECT * FROM deposits
+                            JOIN plans
+                            ON deposits.plan = plans.id
+                             WHERE deposits.active = false AND deposits.user='$userid'";
+                            $res = mysqli_query($conn, $query);
+
+                            ?>
                             <div class="nk-block-head-content">
-                                <h5 class="nk-block-title">Recently End <span class="count text-base">(1)</span></h5>
+                                <h5 class="nk-block-title">Recently End <span class="count text-base">
+                                        (
+                                        <?= $res->num_rows; ?> )
+                                    </span></h5>
                             </div>
                             <div class="nk-block-head-content">
                                 <a href="#"><em class="icon ni ni-dot-box"></em> Go to Archive</a>
@@ -217,75 +228,69 @@ require_once "./includes/header.php";
                         </div>
                     </div>
                     <div class="nk-iv-scheme-list">
-                        <div class="nk-iv-scheme-item">
-                            <div class="nk-iv-scheme-icon is-done">
-                                <em class="icon ni ni-offer"></em>
-                            </div>
-                            <div class="nk-iv-scheme-info">
-                                <div class="nk-iv-scheme-name">Silver - Daily 4.76% for 21 Days</div>
-                                <div class="nk-iv-scheme-desc">Invested Amount - <span class="amount">$250</span></div>
-                            </div>
-                            <div class="nk-iv-scheme-term">
-                                <div class="nk-iv-scheme-start nk-iv-scheme-order">
-                                    <span class="nk-iv-scheme-label text-soft">Start Date</span>
-                                    <span class="nk-iv-scheme-value date">Nov 04, 2019</span>
+                        <?php
+                        while ($row = $res->fetch_assoc()) {
+                            ?>
+                            <div class="nk-iv-scheme-item">
+                                <div class="nk-iv-scheme-icon is-done">
+                                    <em class="icon ni ni-offer"></em>
                                 </div>
-                                <div class="nk-iv-scheme-end nk-iv-scheme-order">
-                                    <span class="nk-iv-scheme-label text-soft">End Date</span>
-                                    <span class="nk-iv-scheme-value date">Nov 25, 2019</span>
+                                <div class="nk-iv-scheme-info">
+                                    <div class="nk-iv-scheme-name">
+                                        <?= $row['name']; ?> - Daily
+                                        <?= $row['increase']; ?>% for
+                                        <?= $row['days']; ?> Days
+                                    </div>
+                                    <div class="nk-iv-scheme-desc">Invested Amount - <span class="amount">
+                                            $
+                                            <?= $row['amount']; ?>
+                                        </span></div>
                                 </div>
-                            </div>
-                            <div class="nk-iv-scheme-amount">
-                                <div class="nk-iv-scheme-amount-a nk-iv-scheme-order">
-                                    <span class="nk-iv-scheme-label text-soft">Total Return</span>
-                                    <span class="nk-iv-scheme-value amount">$ 499.99</span>
+                                <div class="nk-iv-scheme-term">
+                                    <div class="nk-iv-scheme-start nk-iv-scheme-order">
+                                        <span class="nk-iv-scheme-label text-soft">Start Date</span>
+                                        <span class="nk-iv-scheme-value date">
+                                            <?= date_format(new DateTime($row['start_date']), 'M d, Y'); ?>
+
+                                        </span>
+                                    </div>
+                                    <div class="nk-iv-scheme-end nk-iv-scheme-order">
+                                        <span class="nk-iv-scheme-label text-soft">End Date</span>
+                                        <span class="nk-iv-scheme-value date">
+                                            <?= date_format(new DateTime($row['end_date']), 'M d, Y'); ?>
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="nk-iv-scheme-amount-b nk-iv-scheme-order">
-                                    <span class="nk-iv-scheme-label text-soft">Net Profit Earn</span>
-                                    <span class="nk-iv-scheme-value amount">$ 97.95 <span class="amount-ex">~
-                                            $152.04</span></span>
+                                <div class="nk-iv-scheme-amount">
+                                    <div class="nk-iv-scheme-amount-a nk-iv-scheme-order">
+                                        <span class="nk-iv-scheme-label text-soft">Total Return</span>
+                                        <?php
+                                        $total = $row['amount'] + ($row['amount'] * ($row['days'] * ($row['increase'] / 100)))
+                                            ?>
+                                        <span class="nk-iv-scheme-value amount">$
+                                            <?= number_format($total, 2); ?>
+                                        </span>
+                                    </div>
+                                    <div class="nk-iv-scheme-amount-b nk-iv-scheme-order">
+                                        <span class="nk-iv-scheme-label text-soft">Net Profit Earn</span>
+                                        <span class="nk-iv-scheme-value amount"> <span class="amount-ex">~
+                                                $
+                                                <?= number_format($total - $row['amount'], 2); ?>
+                                            </span>
+                                        </span>
+                                    </div>
                                 </div>
+                                <!-- <div class="nk-iv-scheme-more">
+                                    <a class="btn btn-icon btn-lg btn-round btn-trans"
+                                        href="html/invest/scheme-details.html"><em class="icon ni ni-forward-ios"></em></a>
+                                </div> -->
                             </div>
-                            <div class="nk-iv-scheme-more">
-                                <a class="btn btn-icon btn-lg btn-round btn-trans"
-                                    href="html/invest/scheme-details.html"><em class="icon ni ni-forward-ios"></em></a>
-                            </div>
-                        </div><!-- .nk-iv-scheme-item -->
-                        <div class="nk-iv-scheme-item">
-                            <div class="nk-iv-scheme-icon is-done">
-                                <em class="icon ni ni-offer"></em>
-                            </div>
-                            <div class="nk-iv-scheme-info">
-                                <div class="nk-iv-scheme-name">Silver - Daily 4.76% for 21 Days</div>
-                                <div class="nk-iv-scheme-desc">Invested Amount - <span class="amount">$1,250</span>
-                                </div>
-                            </div>
-                            <div class="nk-iv-scheme-term">
-                                <div class="nk-iv-scheme-start nk-iv-scheme-order">
-                                    <span class="nk-iv-scheme-label text-soft">Start Date</span>
-                                    <span class="nk-iv-scheme-value date">Oct 30, 2019</span>
-                                </div>
-                                <div class="nk-iv-scheme-end nk-iv-scheme-order">
-                                    <span class="nk-iv-scheme-label text-soft">End Date</span>
-                                    <span class="nk-iv-scheme-value date">Nov 19, 2019</span>
-                                </div>
-                            </div>
-                            <div class="nk-iv-scheme-amount">
-                                <div class="nk-iv-scheme-amount-a nk-iv-scheme-order">
-                                    <span class="nk-iv-scheme-label text-soft">Total Return</span>
-                                    <span class="nk-iv-scheme-value amount">$ 2,500</span>
-                                </div>
-                                <div class="nk-iv-scheme-amount-b nk-iv-scheme-order">
-                                    <span class="nk-iv-scheme-label text-soft">Net Profit Earn</span>
-                                    <span class="nk-iv-scheme-value amount">$ 1145.25 <span class="amount-ex">~
-                                            $105.75</span></span>
-                                </div>
-                            </div>
-                            <div class="nk-iv-scheme-more">
-                                <a class="btn btn-icon btn-lg btn-round btn-trans"
-                                    href="html/invest/scheme-details.html"><em class="icon ni ni-forward-ios"></em></a>
-                            </div>
-                        </div><!-- .nk-iv-scheme-item -->
+                            <?php
+                        }
+                        ?>
+
+                        <!-- .nk-iv-scheme-item -->
+
                     </div><!-- .nk-iv-scheme-list -->
                 </div><!-- .nk-block -->
             </div>
