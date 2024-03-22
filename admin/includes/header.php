@@ -86,7 +86,7 @@ $row = $res->fetch_assoc();
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
-                                    <a href="html/invest/profile.html" class="nk-menu-link">
+                                    <a href="html/invest/profile.php" class="nk-menu-link">
                                         <span class="nk-menu-text">Profile</span>
                                     </a>
                                 </li>
@@ -313,7 +313,7 @@ $row = $res->fetch_assoc();
                                         </div>
                                         <div class="dropdown-inner">
                                             <ul class="link-list">
-                                                <li><a href="html/invest/profile.html"><em
+                                                <li><a href="html/invest/profile.php"><em
                                                             class="icon ni ni-user-alt"></em><span>View
                                                             Profile</span></a></li>
                                                 <li><a href="html/invest/profile-setting.html"><em

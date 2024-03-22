@@ -383,7 +383,7 @@ require_once "./includes/header.php";
                                             <em class="icon ni ni-link-alt"></em>
                                         </div>
                                         <input type="text" class="form-control copy-text" id="refUrl"
-                                            value="https://dashlite.net/?ref=4945KD48">
+                                            value="?ref=<?= $userid; ?>">
                                     </div>
                                 </div>
                             </div>
