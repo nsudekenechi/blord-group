@@ -1,10 +1,10 @@
 <?php
-require_once("../db/db_connect.php");
-require_once("./email.php");
+require_once ("../db/db_connect.php");
+require_once ("./email.php");
 session_start();
 
 // Adding Users to DB
-if (isset($_POST["signUp"])) {
+if (isset ($_POST["signUp"])) {
     extract($_POST);
     $hashPassword = password_hash($password, PASSWORD_DEFAULT);
     $query = "INSERT INTO users (fullname,username,email,password)  VALUES ('$fullname', '$username','$email','$hashPassword')";
@@ -17,7 +17,7 @@ if (isset($_POST["signUp"])) {
 }
 
 // Verifying if email already exists
-if (isset($_GET["verifyEmail"])) {
+if (isset ($_GET["verifyEmail"])) {
     $email = $_GET["verifyEmail"];
     $query = "SELECT * FROM users WHERE email='$email'";
     $res = mysqli_query($conn, $query);
@@ -30,7 +30,7 @@ if (isset($_GET["verifyEmail"])) {
 
 
 // Verifying if email already exists
-if (isset($_GET["verifyUsername"])) {
+if (isset ($_GET["verifyUsername"])) {
     $username = $_GET["verifyUsername"];
     $query = "SELECT * FROM users WHERE username='$username'";
     $res = mysqli_query($conn, $query);
@@ -42,7 +42,7 @@ if (isset($_GET["verifyUsername"])) {
 }
 
 // Logging user in
-if (isset($_POST["login"])) {
+if (isset ($_POST["login"])) {
     extract($_POST);
     $query = "SELECT * FROM users WHERE username='$username' OR email='$username'";
     $res = mysqli_query($conn, $query);
@@ -61,7 +61,7 @@ if (isset($_POST["login"])) {
 }
 
 // Forgot password
-if (isset($_POST["resetPassword"])) {
+if (isset ($_POST["resetPassword"])) {
     extract($_POST);
     $code = generateRandomPassword(6);
     $hashPassword = password_hash($code, PASSWORD_DEFAULT);
@@ -80,7 +80,7 @@ if (isset($_POST["resetPassword"])) {
 }
 
 // Verify code
-if (isset($_POST["verifyCode"])) {
+if (isset ($_POST["verifyCode"])) {
     extract($_POST);
     $email = $_SESSION["forgotpassword"];
     $query = "SELECT * FROM forgotpassword WHERE email ='$email' ORDER BY id DESC LIMIT 1";
@@ -95,7 +95,7 @@ if (isset($_POST["verifyCode"])) {
 }
 
 // Reset Password
-if (isset($_POST["reset"])) {
+if (isset ($_POST["reset"])) {
     extract($_POST);
     $email = $_SESSION["forgotpassword"];
     $hashPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -115,6 +115,9 @@ if (isset($_POST["reset"])) {
     }
 
 }
+
+// Logging user's out
+
 function generateRandomPassword($length)
 {
     $characters = "0123456789";
