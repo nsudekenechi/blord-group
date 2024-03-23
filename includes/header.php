@@ -35,6 +35,10 @@
 		<a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
 	</div>
 	<?php
+	session_start();
+	if (isset ($_GET["ref"])) {
+		$_SESSION["ref"] = $_GET["ref"];
+	}
 	$pages = ["login", "sign up", "forgot password"];
 	$showHeader = true;
 	foreach ($pages as $page) {

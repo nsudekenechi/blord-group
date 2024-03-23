@@ -382,8 +382,12 @@ require_once "./includes/header.php";
                                         <div class="form-icon">
                                             <em class="icon ni ni-link-alt"></em>
                                         </div>
+                                        <?php
+                                        $query = "SELECT username from users WHERE id = '$userid'";
+                                        $res = mysqli_query($conn, $query);
+                                        ?>
                                         <input type="text" class="form-control copy-text" id="refUrl"
-                                            value="?ref=<?= $userid; ?>">
+                                            value="http://localhost/Fundflex/?ref=<?= $res->fetch_column(); ?>">
                                     </div>
                                 </div>
                             </div>

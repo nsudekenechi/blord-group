@@ -90,7 +90,7 @@ $row = $res->fetch_assoc();
                                         <span class="nk-menu-text">Profile</span>
                                     </a>
                                 </li>
-                                <li class="nk-menu-item  has-sub">
+                                <!-- <li class="nk-menu-item  has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
                                         <span class="nk-menu-text">Pages</span>
                                     </a>
@@ -133,97 +133,91 @@ $row = $res->fetch_assoc();
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
                         </div><!-- .nk-header-menu -->
                         <div class="nk-header-tools">
                             <ul class="nk-quick-nav">
                                 <li class="dropdown notification-dropdown">
                                     <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown">
-                                        <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em>
+                                        <div class="icon-status icon-status-info">
+                                            <em class="icon ni ni-bell"></em>
                                         </div>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-xl dropdown-menu-end dropdown-menu-s1">
                                         <div class="dropdown-head">
                                             <span class="sub-title nk-dropdown-title">Notifications</span>
-                                            <a href="#">Mark All as Read</a>
                                         </div>
                                         <div class="dropdown-body">
                                             <div class="nk-notification">
-                                                <div class="nk-notification-item dropdown-inner">
-                                                    <div class="nk-notification-icon">
-                                                        <em
-                                                            class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
-                                                    </div>
-                                                    <div class="nk-notification-content">
-                                                        <div class="nk-notification-text">You have requested to
-                                                            <span>Widthdrawl</span>
+                                                <?php
+                                                $qu = "SELECT notifications.time, notifications.message, plans.name FROM notifications 
+                                                JOIN plans
+                                                ON plans.id = notifications.plan
+                                                WHERE user='$userid'";
+                                                $rs = mysqli_query($conn, $qu);
+                                                $currDate = new DateTime(date("d-M-Y h:i"));
+                                                if ($rs->num_rows) {
+                                                    while ($rw = $rs->fetch_assoc()) {
+                                                        $notificationDate = new DateTime($rw['time']);
+                                                        $diff = $notificationDate->diff($currDate);
+
+                                                        ?>
+                                                        <div class="nk-notification-item dropdown-inner">
+                                                            <div class="nk-notification-icon">
+                                                                <em
+                                                                    class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
+                                                            </div>
+                                                            <div class="nk-notification-content">
+                                                                <div class="nk-notification-text">
+                                                                    <?= $rw['message']; ?> for
+                                                                    <?= $rw['name']; ?> plan
+
+                                                                </div>
+                                                                <div class="nk-notification-time">
+                                                                    <?php
+                                                                    if ($diff->m > 0) {
+                                                                        echo $diff->m == 1 ? $diff->m . " month " : $diff->m . "  months ";
+                                                                    } else if ($diff->d > 0) {
+                                                                        echo $diff->d == 1 ? $diff->d . " day " : $diff->d . "  days ";
+                                                                    } else if ($diff->h > 0) {
+                                                                        echo $diff->h == 1 ? $diff->h . " hour " : $diff->h . "  hours ";
+                                                                    } else if ($diff->i > 0) {
+                                                                        echo $diff->i == 1 ? $diff->i . " minute " : $diff->i . "  minutes ";
+                                                                    } else if ($diff->s > 0) {
+                                                                        echo $diff->s == 1 ? $diff->s . " second " : $diff->s . " seconds ";
+                                                                    }
+                                                                    ?>
+                                                                    ago
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-notification-time">2 hrs ago</div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-notification-item dropdown-inner">
-                                                    <div class="nk-notification-icon">
-                                                        <em
-                                                            class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
-                                                    </div>
-                                                    <div class="nk-notification-content">
-                                                        <div class="nk-notification-text">Your <span>Deposit
-                                                                Order</span> is placed</div>
-                                                        <div class="nk-notification-time">2 hrs ago</div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-notification-item dropdown-inner">
-                                                    <div class="nk-notification-icon">
-                                                        <em
-                                                            class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
-                                                    </div>
-                                                    <div class="nk-notification-content">
-                                                        <div class="nk-notification-text">You have requested to
-                                                            <span>Widthdrawl</span>
+                                                        <?php
+                                                    }
+                                                } else {
+                                                    ?>
+                                                    <div class="nk-notification-item dropdown-inner">
+                                                        <div class="nk-notification-content">
+                                                            <div class="nk-notification-text">
+                                                                There are no notifcations at the moment
+                                                            </div>
                                                         </div>
-                                                        <div class="nk-notification-time">2 hrs ago</div>
                                                     </div>
-                                                </div>
-                                                <div class="nk-notification-item dropdown-inner">
-                                                    <div class="nk-notification-icon">
-                                                        <em
-                                                            class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
-                                                    </div>
-                                                    <div class="nk-notification-content">
-                                                        <div class="nk-notification-text">Your <span>Deposit
-                                                                Order</span> is placed</div>
-                                                        <div class="nk-notification-time">2 hrs ago</div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-notification-item dropdown-inner">
-                                                    <div class="nk-notification-icon">
-                                                        <em
-                                                            class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
-                                                    </div>
-                                                    <div class="nk-notification-content">
-                                                        <div class="nk-notification-text">You have requested to
-                                                            <span>Widthdrawl</span>
-                                                        </div>
-                                                        <div class="nk-notification-time">2 hrs ago</div>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-notification-item dropdown-inner">
-                                                    <div class="nk-notification-icon">
-                                                        <em
-                                                            class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
-                                                    </div>
-                                                    <div class="nk-notification-content">
-                                                        <div class="nk-notification-text">Your <span>Deposit
-                                                                Order</span> is placed</div>
-                                                        <div class="nk-notification-time">2 hrs ago</div>
-                                                    </div>
-                                                </div>
+                                                    <?php
+                                                }
+                                                ?>
                                             </div><!-- .nk-notification -->
                                         </div><!-- .nk-dropdown-body -->
-                                        <div class="dropdown-foot center">
-                                            <a href="#">View All</a>
-                                        </div>
+                                        <?php
+                                        if ($rs->num_rows) {
+                                            ?>
+                                            <div class="dropdown-foot center">
+                                                <a href="#" id="deleteAll">Delete All</a>
+                                            </div>
+                                            <?php
+                                        }
+                                        ?>
+
                                     </div>
                                 </li><!-- .dropdown -->
                                 <li class="dropdown language-dropdown d-none d-sm-flex me-n1">
@@ -240,7 +234,7 @@ $row = $res->fetch_assoc();
                                                     <span class="language-name">English</span>
                                                 </a>
                                             </li>
-                                            <li>
+                                            <!-- <li>
                                                 <a href="#" class="language-item">
                                                     <img src="./images/flags/spanish.png" alt="" class="language-flag">
                                                     <span class="language-name">Español</span>
@@ -257,7 +251,7 @@ $row = $res->fetch_assoc();
                                                     <img src="./images/flags/turkey.png" alt="" class="language-flag">
                                                     <span class="language-name">Türkçe</span>
                                                 </a>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div>
                                 </li><!-- .dropdown -->
@@ -303,10 +297,11 @@ $row = $res->fetch_assoc();
                                         </div>
                                         <div class="dropdown-inner user-account-info">
                                             <h6 class="overline-title-alt">Account Balance</h6>
-                                            <div class="user-balance">1,494.23 <small
-                                                    class="currency currency-usd">USD</small></div>
-                                            <div class="user-balance-sub">Locked <span>15,495.39 <span
-                                                        class="currency currency-usd">USD</span></span></div>
+                                            <div class="user-balance">
+                                                <?= number_format($row['balance'], 2); ?> <small
+                                                    class="currency currency-usd">USD</small>
+                                            </div>
+
                                             <a href="#" class="link"><span>Withdraw Balance</span> <em
                                                     class="icon ni ni-wallet-out"></em></a>
                                         </div>
@@ -327,7 +322,8 @@ $row = $res->fetch_assoc();
                                         </div>
                                         <div class="dropdown-inner">
                                             <ul class="link-list">
-                                                <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign
+                                                <li><a href="./handlers/logout.php"><em
+                                                            class="icon ni ni-signout"></em><span>Sign
                                                             out</span></a></li>
                                             </ul>
                                         </div>
@@ -342,3 +338,23 @@ $row = $res->fetch_assoc();
             <h1>
                 <?= $_SESSION["user"]; ?>
             </h1>
+
+            <script>
+                let deleteAll = document.querySelector("#deleteAll");
+                deleteAll.onclick = () => {
+                    fetch("./handlers/delete.php?deleteNotifcation").then(e => e.text()).then(e => {
+                        document.querySelectorAll(".nk-notification-item").forEach(item => {
+                            item.remove()
+                        })
+                        document.querySelector(".nk-notification").innerHTML = `
+                        <div class="nk-notification-item dropdown-inner">
+                                                        <div class="nk-notification-content">
+                                                            <div class="nk-notification-text">
+                                                            No Notifcations
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                        `
+                    })
+                }
+            </script>
