@@ -9,6 +9,28 @@ if (isset ($_POST["signUp"])) {
     $hashPassword = password_hash($password, PASSWORD_DEFAULT);
     $query = "INSERT INTO users (fullname,username,email,password)  VALUES ('$fullname', '$username','$email','$hashPassword')";
     $res = mysqli_query($conn, $query);
+    // Storing information for referrals
+    if (isset ($_SESSION["ref"])) {
+        $user = $_SESSION["ref"];
+        $refUser = $username;
+        $date = date("d-M-Y h:i");
+        $query = "SELECT id FROM  users WHERE username = '$user'";
+        $res = mysqli_query($conn, $query);
+        $user = $res->fetch_column();
+
+        $query = "SELECT id from users WHERE username = '$refUser'";
+        $res = mysqli_query($conn, $query);
+        $refUserId = $res->fetch_column();
+        $query = "INSERT INTO referrals (user, ref_user, date) VALUES ('$user', '$refUserId','$date')";
+        $res = mysqli_query($conn, $query);
+
+        // Sending user notification
+        $msg = "Your referral $refUser just signed in";
+        $query = "INSERT INTO notifications (user, message, time) VALUES ('$user', '$msg', '$date') ";
+        $res = mysqli_query($conn, $query);
+        session_destroy();
+    }
+
     if ($res) {
         header("Location: ../login.php");
     } else {

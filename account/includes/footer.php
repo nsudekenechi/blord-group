@@ -175,7 +175,8 @@
 <!-- JavaScript -->
 <script src="./assets/js/bundle.js?ver=3.2.2"></script>
 <script src="./assets/js/scripts.js?ver=3.2.2"></script>
-<script src="./assets/js/charts/chart-invest.js?ver=3.2.2"></script>
+
+<!-- <script src="./assets/js/charts/chart-invest.js?ver=3.2.2"></script> -->
 </body>
 
 </html>

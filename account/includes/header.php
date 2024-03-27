@@ -11,6 +11,9 @@ $query = "SELECT * FROM users WHERE id='$userid'";
 $res = mysqli_query($conn, $query);
 $row = $res->fetch_assoc();
 
+if ($res->num_rows <= 0) {
+    header("Location: ../login.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -32,6 +35,9 @@ $row = $res->fetch_assoc();
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="./assets/css/dashlite.css?ver=3.2.2">
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=3.2.2">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="nk-body npc-invest bg-lighter ">
@@ -214,6 +220,25 @@ $row = $res->fetch_assoc();
                                             <div class="dropdown-foot center">
                                                 <a href="#" id="deleteAll">Delete All</a>
                                             </div>
+                                            <script>
+                                                let deleteAll = document.querySelector("#deleteAll");
+                                                deleteAll.onclick = () => {
+                                                    fetch("./handlers/delete.php?deleteNotifcation").then(e => e.text()).then(e => {
+                                                        document.querySelectorAll(".nk-notification-item").forEach(item => {
+                                                            item.remove()
+                                                        })
+                                                        document.querySelector(".nk-notification").innerHTML = `
+                            <div class="nk-notification-item dropdown-inner">
+                                                            <div class="nk-notification-content">
+                                                                <div class="nk-notification-text">
+                                                                No Notifcations
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                            `
+                                                    })
+                                                }
+                                            </script>
                                             <?php
                                         }
                                         ?>
@@ -338,23 +363,3 @@ $row = $res->fetch_assoc();
             <h1>
                 <?= $_SESSION["user"]; ?>
             </h1>
-
-            <script>
-                let deleteAll = document.querySelector("#deleteAll");
-                deleteAll.onclick = () => {
-                    fetch("./handlers/delete.php?deleteNotifcation").then(e => e.text()).then(e => {
-                        document.querySelectorAll(".nk-notification-item").forEach(item => {
-                            item.remove()
-                        })
-                        document.querySelector(".nk-notification").innerHTML = `
-                        <div class="nk-notification-item dropdown-inner">
-                                                        <div class="nk-notification-content">
-                                                            <div class="nk-notification-text">
-                                                            No Notifcations
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                        `
-                    })
-                }
-            </script>

@@ -332,9 +332,37 @@ require_once ("./includes/header.php");
                                             </ul>
                                         </div><!-- .nk-iv-wg4-sub -->
                                         <div class="nk-iv-wg4-sub text-center bg-lighter">
-                                            <button class="btn btn-lg btn-primary ttu" name="deposit"
-                                                data-bs-toggle="modal">Confirm &amp; proceed</button>
-                                        </div><!-- .nk-iv-wg4-sub -->
+                                            <!-- Modal Content Code -->
+                                            <div class="modal fade" tabindex="-1" id="modalDefault">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <a href="#" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <em class="icon ni ni-cross"></em>
+                                                        </a>
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Modal Title</h5>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                                Voluptatem similique earum
+                                                                necessitatibus nesciunt! Quia id expedita asperiores
+                                                                voluptatem odit quis fugit sapiente
+                                                                assumenda sunt voluptatibus atque facere autem, omnis
+                                                                explicabo.</p>
+                                                        </div>
+                                                        <div class="modal-footer bg-light">
+                                                            <span class="sub-text">Modal Footer Text</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal Trigger Code -->
+
+                                            <button class="btn btn-lg btn-primary ttu" name="deposit">Create
+                                                deposit</button>
+                                        </div>
+                                        <!-- .nk-iv-wg4-sub -->
                                     </div><!-- .nk-iv-wg4 -->
                                 </div><!-- .card -->
                             </div><!-- .col -->
@@ -344,6 +372,98 @@ require_once ("./includes/header.php");
             </div>
         </div>
     </div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTabs" hidden
+        id="btn">Create
+        Deposit
+    </button>
+    <?php
+    if (isset ($_GET["deposit"])) {
+        $id = $_GET["deposit"];
+        $query = "SELECT * FROM deposits WHERE id = '$id'";
+        $res = mysqli_query($conn, $query);
+        $row = $res->fetch_assoc();
+        ?>
+        <div class="modal fade" tabindex="-1" role="dialog" id="modalTabs">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+                    <div class="modal-body modal-body-md">
+
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabItem1">
+                                <div class="justify-center">
+                                    <h3>$
+                                        <?= number_format($row['amount'], 2); ?>
+                                    </h3>
+                                </div>
+                                <div class="justify-center">
+                                    <p>
+                                        Deposit amount to wallet or scan QR code. Thank you.</p>
+
+                                </div>
+                                <div class="justify-center my-3">
+                                    <div id="qrcode"></div>
+                                </div>
+                                <div class="justify-center">
+                                    <div class="nk-refwg-url  w-50">
+                                        <div class="form-control-wrap">
+                                            <div class="form-clip clipboard-init" data-clipboard-target="#refUrl"
+                                                data-success="Copied" data-text="Copy Link"><em
+                                                    class="clipboard-icon icon ni ni-copy"></em> <span
+                                                    class="clipboard-text">Copy Address</span>
+                                            </div>
+                                            <!-- <div class="form-icon">
+                                        <em class="icon ni ni-link-alt"></em>
+                                    </div> -->
+                                            <input type="text" class="form-control copy-text" id="refUrl"
+                                                value="23290176257893029" readonly="" style="border:none;">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="justify-center mt-3">
+                            <a class="btn btn-lg btn-primary ttu w-25 center" name="deposit" data-bs-toggle="modal"
+                                data-bs-target="#modalAlert">Done</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" id="modalAlert">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross"></em></a>
+                    <div class="modal-body modal-body-lg text-center">
+                        <div class="nk-modal">
+                            <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-check bg-success"></em>
+                            <h4 class="nk-modal-title">Congratulations!</h4>
+                            <div class="nk-modal-text">
+                                <div class="caption-text">Once we verify your payment, your account would be funded
+                                </div>
+
+                            </div>
+                            <div class="nk-modal-action">
+                                <a href="#" class="btn btn-lg btn-mw btn-primary" data-bs-dismiss="modal">OK</a>
+                            </div>
+                        </div>
+                    </div><!-- .modal-body -->
+                    <div class="modal-footer bg-lighter">
+                        <div class="text-center w-100">
+                            <p>Earn up to 10% profit for each friend your refer! </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+
+</div>
+
 </div>
 <!-- content @e -->
 <script type="module">
@@ -364,8 +484,12 @@ require_once ("./includes/header.php");
     let minAmount = document.querySelector("#minAmount");
     let maxAmount = document.querySelector("#maxAmount");
     let amountCurr = document.querySelectorAll(".amountCurr");
+    let btn = document.querySelector("#btn")
+    if (location.search.includes("deposit")) {
+        var qrcode = new QRCode("qrcode", document.querySelector("#refUrl").value);
+        btn.click()
 
-
+    }
     amounts.forEach(amount => {
         amount.onclick = () => {
             let amountInput = amount.querySelector(".amountInput").innerHTML

@@ -248,7 +248,7 @@ require_once "./includes/header.php";
                                             <?php
                                             $currMonth = date('M');
                                             $query = "SELECT SUM(deposits.amount * plans.increase/100) FROM deposits JOIN plans ON deposits.plan=plans.id
-                                            WHERE deposits.last_profit LIKE '%$currMonth%'";
+                                            WHERE deposits.last_profit LIKE '%$currMonth%' AND deposits.user='$userid'";
                                             $res = mysqli_query($conn, $query);
                                             $profit = $res->fetch_column();
                                             ?>
@@ -276,7 +276,13 @@ require_once "./includes/header.php";
                                                 </li>
                                                 <li>
                                                     <span class="item-label">Referrals</span>
-                                                    <span class="item-value">0.00</span>
+                                                    <?php
+                                                    $query = "SELECT SUM(referrals.ref_earned) FROM referrals WHERE user='$userid' AND referrals.date LIKE '%$currMonth%'";
+                                                    $res = mysqli_query($conn, $query);
+                                                    ?>
+                                                    <span class="item-value">
+                                                        <?= number_format($res->fetch_column(), 2); ?>
+                                                    </span>
                                                 </li>
                                                 <li>
                                                     <span class="item-label">Rewards</span>
@@ -285,7 +291,12 @@ require_once "./includes/header.php";
                                                 <li class="total">
                                                     <span class="item-label">Total Profit</span>
                                                     <span class="item-value">
-                                                        <?= number_format($profit, 2); ?>
+                                                        <?php
+                                                        $query = "SELECT SUM(referrals.ref_earned) + users.profits FROM referrals JOIN users ON users.id = referrals.user
+                                                        WHERE users.id = '$userid' AND referrals.date LIKE '%$currMonth%'";
+                                                        $res = mysqli_query($conn, $query);
+                                                        ?>
+                                                        <?= number_format($res->fetch_column(), 2); ?>
                                                     </span>
                                                 </li>
                                             </ul>
@@ -398,13 +409,26 @@ require_once "./includes/header.php";
                                                 data-bs-toggle="tooltip" data-bs-placement="right"
                                                 title="Referral Informations"></em></h6>
                                     </div>
+                                    <?php
+                                    $query = "SELECT COUNT(id) FROM referrals WHERE user='$userid'";
+                                    $res = mysqli_query($conn, $query);
+
+                                    ?>
                                     <div class="nk-refwg-info g-3">
                                         <div class="nk-refwg-sub">
-                                            <div class="title">394</div>
+                                            <div class="title">
+                                                <?= $res->fetch_column(); ?>
+                                            </div>
                                             <div class="sub-text">Total Joined</div>
                                         </div>
                                         <div class="nk-refwg-sub">
-                                            <div class="title">548.49</div>
+                                            <?php
+                                            $query = "SELECT SUM(ref_earned) FROM referrals WHERE user='$userid'";
+                                            $res = mysqli_query($conn, $query);
+                                            ?>
+                                            <div class="title">
+                                                <?= number_format($res->fetch_column(), 2); ?>
+                                            </div>
                                             <div class="sub-text">Referral Earn</div>
                                         </div>
                                     </div>
