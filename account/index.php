@@ -398,7 +398,8 @@ require_once "./includes/header.php";
                                         $res = mysqli_query($conn, $query);
                                         ?>
                                         <input type="text" class="form-control copy-text" id="refUrl"
-                                            value="http://localhost/Fundflex/?ref=<?= $res->fetch_column(); ?>">
+                                            value="http://localhost/Fundflex/?ref=<?= $res->fetch_column(); ?>"
+                                            readonly>
                                     </div>
                                 </div>
                             </div>

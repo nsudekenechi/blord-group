@@ -1,6 +1,6 @@
 <?php
 $title = "Login";
-include_once("./includes/header.php");
+include_once ("./includes/header.php");
 ?>
 <style>
     .animate-invalid {
@@ -107,5 +107,5 @@ include_once("./includes/header.php");
     }
 </script>
 <?php
-require_once("./includes/footer.php");
+require_once ("./includes/footer.php");
 ?>
